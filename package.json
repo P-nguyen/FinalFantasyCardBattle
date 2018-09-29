@@ -1,7 +1,7 @@
 {
-  "name": "php_react_starter",
+  "name": "FinalFantasy Card Batle",
   "version": "1.0.0",
-  "description": "Starting setup for ReactJS ReduxJS project with PHP server",
+  "description": "FinalFantasy Card Battle with React/Redux/Firebase",
   "main": "index.js",
   "scripts": {
     "start": "node dev_server.js",
