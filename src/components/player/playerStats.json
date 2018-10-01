@@ -1,0 +1,10 @@
+{
+    "Ramsus":{
+        "health": 10,
+        "attack":2
+    },
+    "Cloud":{
+        "health": 10,
+        "attack":2
+    }
+}

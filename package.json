@@ -1,5 +1,5 @@
 {
-  "name": "FinalFantasy_Card_Batle",
+  "name": "FinalFantasyCardBatle",
   "version": "1.0.0",
   "description": "FinalFantasy Card Battle with React/Redux/Firebase",
   "main": "index.js",

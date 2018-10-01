@@ -1,6 +1,7 @@
 import React from 'react';
 import '../assets/css/app.css';
 import logo from '../assets/images/logo.svg';
+import Player from './player';
 import Card from './card';
 
 
@@ -14,6 +15,7 @@ const App = () => (
             */}
             
             <Card/>
+            <Player avatarName='Ramsus'/>
         </div>
     </div>
 );
