@@ -6,15 +6,20 @@ class Player extends Component{
     constructor(props){
         super(props);
 
-        this.health = 10;
+        this.health = avatarStats[props.avatarName].health;
         this.cardHeld = null; //holds name of card
         this.currentAttackPower = avatarStats[props.avatarName].attack;
+        this.avatarName = props.avatarName;
 
     }
 
     render(){
         return (
-            <div className='player'>{this.currentAttackPower}</div>
+            <div className='player'>
+            <h1>{this.avatarName}</h1>
+            <h2>{this.health}</h2>
+            <h2>{this.currentAttackPower}</h2>
+            </div>
         );
     }
 }
