@@ -1,6 +1,55 @@
-.card {
+/* .cardContainer {
     height: 160px;
     width: 100px;
-    background: red;
     display: inline-block;
+} */
+
+.cardContainer{
+    height: 160px; /*fix this eventually*/
+    width: 100px;
+    display: inline-block;
+    perspective: 1000px;
+    background: red;
+
+}
+.card {
+    height: 80%;
+    width: 80%;
+    position: relative;
+    top: 10%;
+    left: 10%;
+}
+
+.cardContainer .card:hover {
+    transform: scale(1.2);
+}
+
+.back, .front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #414042;
+}
+.front{
+    /* background: url('images/cards/cardBack.jpg'); */
+    background: purple;
+    background-size: 100% 100%;
+
+}
+.back{
+    background: chartreuse;
+    transform: rotateY(180deg);/*flip at beginning so when triggered it will flip correctly by flipper*/
+}
+
+.card.revealed.flipper, .playerCardPlacement .card.revealed.flipper{
+    transform: rotateY(180deg)/* once reveal is added to card it will trigger this and flip it*/
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
 }
