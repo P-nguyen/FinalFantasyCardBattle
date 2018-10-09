@@ -1,0 +1,11 @@
+react: will translate whats been done
+
+redux: will hold player currente state
+            health/held card/ attack status
+
+reducers: will be created for every card action avalible
+        reducer is called at the end of each player turn to update player status.
+
+game logic is called when needed
+
+

@@ -22,8 +22,10 @@ class Game extends Component{
 
                 <Player avatarName='Ramsus'/>
                 
-                <div id ='gameBoard'>
-                    {this.addCardToField()}
+                <div id ='gameBoard' className='container'>
+                    <div className='row'>
+                        {this.addCardToField()}
+                    </div>
                 </div>
             
                 <Player avatarName='Cloud'/>
