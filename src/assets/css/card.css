@@ -29,18 +29,18 @@
     height: 100%;
     width: 100%;
     left: 0;
-    border-radius: 10px;
+    border-radius: 4px;
     border-style: solid;
     border-width: thin;
     border-color: #414042;
 }
-.front{
+.back{
     /* background: url('images/cards/cardBack.jpg'); */
     background: purple;
     background-size: 100% 100%;
 
 }
-.back{
+.front{
     background: chartreuse;
     transform: rotateY(180deg);/*flip at beginning so when triggered it will flip correctly by flipper*/
 }
@@ -52,4 +52,14 @@
 .flipper {
     transition: 0.6s;
     transform-style: preserve-3d;
+}
+
+
+/* mediaQueries */
+
+@media screen and (max-width: 576px) {
+    .cardContainer{
+        height: 80px;
+        width: 50px;
+  }
 }
