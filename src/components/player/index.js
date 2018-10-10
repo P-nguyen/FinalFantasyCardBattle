@@ -15,7 +15,7 @@ class Player extends Component{
 
     render(){
         return (
-            <div className='player'>
+            <div className='player col-sm-3'>
             <h1>{this.avatarName}</h1>
             <h2>{this.health}</h2>
             <h2>{this.currentAttackPower}</h2>
