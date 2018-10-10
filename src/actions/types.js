@@ -1,3 +1,4 @@
 export default {
-    UPDATE_DECK: 'update_deck'
+    RANDOMIZE_DECK: 'randomize_deck',
+    REVEAL_CARD: 'reveal_card'
 }

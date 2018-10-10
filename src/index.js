@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers';
 
+import _ from 'lodash';
+
 import Game from './components/game';
 
 const store = createStore(rootReducer);

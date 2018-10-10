@@ -1,17 +1,21 @@
 import React,{ Component } from 'react';
 import { connect } from 'react-redux';
+import { revealCard } from '../../actions';
 
 import Card from '../card';
-import cardData from '../gameEngine/CardData';
+
 
 class GameBoard extends Component{
+
+    revealChildCard(id){
+            this.props.revealCard(id);
+    }
 
     addCardToField(){
         const stateDeck = this.props.stateDeck;
         var deck = [];
-        
         for(var i = 0; i < 9; i++){
-            deck.push(<Card key={i} cardData={cardData[stateDeck[i]]} />);
+            deck.push(<Card key={i} id={i} cardData={stateDeck[i]} revealCard={this.revealChildCard.bind(this,i)} />);
         }
 
         return deck;
@@ -35,4 +39,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps)(GameBoard);
+export default connect(mapStateToProps, { revealCard })(GameBoard);
