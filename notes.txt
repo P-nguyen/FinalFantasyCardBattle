@@ -9,3 +9,5 @@ reducers: will be created for every card action avalible
 game logic is called when needed
 
 
+todo.
+add reveal prop to redux card state

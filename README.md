@@ -1,6 +1,7 @@
 # Final Fantasy Card battle
 
-> This card game uses React/Redux/Firebase
+> This card game uses React/Redux
+> Coming Soon Firebase
 
 ### Game Description
 
