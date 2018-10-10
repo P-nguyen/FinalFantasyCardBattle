@@ -27,8 +27,8 @@ class GameBoard extends Component{
 
     render(){
         return(
-            <div id ='gameBoard' className='container'>
-                <div className='row'>
+            <div id ='gameBoard' className='col-sm-6'>
+                <div className='row no-gutters'>
                     {this.addCardToField()}
                 </div>
             </div>

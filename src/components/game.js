@@ -9,13 +9,13 @@ class Game extends Component{
 
     render(){
         return (
-            <div id ='game'>
+            <div id ='game' className='row no-gutters'>
 
-                <Player avatarName='Ramsus'/>
+                <Player avatarName='Ramsus' />
                 
-                <GameBoard/>
+                <GameBoard />
             
-                <Player avatarName='Cloud'/>
+                <Player avatarName='Cloud' />
 
             </div>
         );
