@@ -9,3 +9,9 @@ export function revealCard( id){
         }
     }
 }
+
+export function randomizeDeck(){
+    return {
+        type: types.RANDOMIZE_DECK
+    }
+}
