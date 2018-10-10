@@ -1,26 +1,31 @@
 import React,{ Component } from 'react';
+import { connect } from 'react-redux';
 import '../assets/css/game.css';
 import Player from './player';
 import GameBoard from './gameBoard';
 
 
 
-class Game extends Component{
-
-    render(){
-        return (
+function Game(props){
+    return (
+        
             <div id ='game' className='row no-gutters'>
 
-                <Player avatarName='Ramsus' />
+                <Player player={props.player1}/>
                 
                 <GameBoard />
             
-                <Player avatarName='Cloud' />
+                <Player player={props.player2} />
 
             </div>
-        );
-    }
+    );
 }
 
+function mapStateToProps(state){
+    return{
+        player1:state.players.player1,
+        player2:state.players.player2
+    };
+}
 
-export default Game;
+export default connect(mapStateToProps)(Game);
