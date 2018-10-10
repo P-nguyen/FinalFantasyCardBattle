@@ -10,4 +10,16 @@ game logic is called when needed
 
 
 todo.
-add reveal prop to redux card state
+image needs to float right for player when on mobile
+
+need to add comparison logic funcionts in game engine
+
+need to add turn selections
+
+need to add reducer for player
+        IE player current holds what card?
+        does it match the attack card?
+        bahamut?
+
+
+create turn based functionality.
