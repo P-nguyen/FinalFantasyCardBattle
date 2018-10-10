@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import { connect } from 'react-redux';
-import { revealCard } from '../../actions';
+import { revealCard, randomizeDeck } from '../../actions';
 
 import Card from '../card';
 
@@ -21,6 +21,10 @@ class GameBoard extends Component{
         return deck;
     }
 
+    componentDidMount(){
+        this.props.randomizeDeck();
+    }
+
     render(){
         return(
             <div id ='gameBoard' className='container'>
@@ -39,4 +43,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, { revealCard })(GameBoard);
+export default connect(mapStateToProps, { revealCard, randomizeDeck })(GameBoard);

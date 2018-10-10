@@ -13,6 +13,21 @@ const DEFAULT_STATE = {
 
 };
 
+
+function randomizeCardOrderArr( array ){
+    var newArrayOrder = [];
+    var arrayLength = array.length-1;
+
+    while(newArrayOrder.length <= arrayLength){
+        var rndNumber = Math.floor(Math.random()*array.length);
+
+        newArrayOrder.push(array[rndNumber]);
+        array.splice([rndNumber],1);
+    }
+    return newArrayOrder;
+}
+
+
 function deckReducer( state = DEFAULT_STATE, action){
     switch(action.type){
         case types.REVEAL_CARD:
@@ -26,6 +41,8 @@ function deckReducer( state = DEFAULT_STATE, action){
                 }
                 return nObj})
             };
+        case types.RANDOMIZE_DECK:
+            return {deck:randomizeCardOrderArr(DEFAULT_STATE.deck)};
         default:
             return state;
     }
