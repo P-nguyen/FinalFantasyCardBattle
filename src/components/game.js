@@ -5,7 +5,6 @@ import Player from './player';
 import GameBoard from './gameBoard';
 
 
-
 function Game(props){
     return (
         
@@ -13,7 +12,7 @@ function Game(props){
 
                 <Player player={props.player1}/>
                 
-                <GameBoard />
+                <GameBoard turn={props.currentTurn}/>
             
                 <Player player={props.player2} />
 
@@ -24,7 +23,8 @@ function Game(props){
 function mapStateToProps(state){
     return{
         player1:state.players.player1,
-        player2:state.players.player2
+        player2:state.players.player2,
+        currentTurn: state.currentTurn.currentTurn
     };
 }
 

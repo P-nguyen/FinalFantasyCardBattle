@@ -7,15 +7,15 @@ import Card from '../card';
 
 class GameBoard extends Component{
 
-    revealChildCard(id){
-            this.props.revealCard(id);
+    revealChildCard(id, name){
+            this.props.revealCard(id, name);
     }
 
     addCardToField(){
         const stateDeck = this.props.stateDeck;
         var deck = [];
         for(var i = 0; i < 9; i++){
-            deck.push(<Card key={i} id={i} cardData={stateDeck[i]} revealCard={this.revealChildCard.bind(this,i)} />);
+            deck.push(<Card key={i} id={i} cardData={stateDeck[i]} revealCard={this.revealChildCard.bind(this,i,stateDeck[i].name)} />);
         }
 
         return deck;
@@ -27,10 +27,11 @@ class GameBoard extends Component{
 
     render(){
         return(
-            <div id ='gameBoard' className='col-sm-6'>
+            <div id ='gameBoard' className='col-sm-6 text-center'>
                 <div className='row no-gutters'>
                     {this.addCardToField()}
                 </div>
+                <h1>{ this.props.turn%2 ? 'Player 2' : 'Player 1'}</h1>
             </div>
         );
     };
@@ -40,6 +41,7 @@ class GameBoard extends Component{
 function mapStateToProps(state){
     return {
         stateDeck: state.cardDeck.deck
+
     }
 }
 

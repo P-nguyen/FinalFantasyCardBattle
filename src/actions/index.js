@@ -1,11 +1,12 @@
 import types from './types';
 
 
-export function revealCard( id){
+export function revealCard( id, name){
     return {
         type: types.REVEAL_CARD,
         payload: {
-            id: id
+            id: id,
+            name: name
         }
     }
 }
