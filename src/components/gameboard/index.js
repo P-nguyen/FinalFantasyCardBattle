@@ -23,7 +23,7 @@ class GameBoard extends Component{
     }
 
     componentDidMount(){
-        this.props.randomizeDeck();
+        this.props.randomizeDeck(this.props.stateDeck);
     }
 
     render(){

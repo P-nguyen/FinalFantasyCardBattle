@@ -7,12 +7,14 @@ const DEFAULT_STATE = {
         name: 'p1',
         health: 10,
         attack: 1,
+        baseAtk:1,
         equip: null //this could be text like shield or block to reference an ability
     },
     player2:{
         name: 'p2',
         health: 10,
         attack: 1,
+        baseAtk:1,
         equip: null
     }
 };
@@ -20,9 +22,6 @@ const DEFAULT_STATE = {
 function playerReducer( state = DEFAULT_STATE, action){
     switch(action.type){
         case types.CHECK_ABILITY:
-            console.log(action.payload);
-            //need to determine what turn it is
-            //depending on turn use ability on players
             let newState;
             if(action.payload.currentTurn === 0){
                 let array = cardData[action.payload.name].ability(state.player1, state.player2);
@@ -31,8 +30,7 @@ function playerReducer( state = DEFAULT_STATE, action){
                 let array = cardData[action.payload.name].ability(state.player2, state.player1);
                 newState = {player1:array[1], player2:array[0]};
             }
-            //needs to return new state. 
-            return state;
+            return newState;
         default:
             return state;
     }

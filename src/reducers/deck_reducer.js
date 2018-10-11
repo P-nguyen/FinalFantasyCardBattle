@@ -42,7 +42,7 @@ function deckReducer( state = DEFAULT_STATE, action){
                 return nObj})
             };
         case types.RANDOMIZE_DECK:
-            return {deck:randomizeCardOrderArr(DEFAULT_STATE.deck)};
+            return {deck:action.payload};
         default:
             return state;
     }

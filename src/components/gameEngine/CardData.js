@@ -21,11 +21,12 @@ export default {
         address: attack,
         effect: 1,
         ability: function (currentPlayer, enemyPlayer) {
-            if ( targetPlayer.equip === 'shield'){
-                setTimeout(cardName.shield.sound,1000);
+            if ( enemyPlayer.equip === 'shield'){
+                // setTimeout(cardName.shield.sound,1000);
             }else{
-                targetPlayer.health -= currentPlayer.currentAttackPower;
+                enemyPlayer.health -= currentPlayer.attack;
             }
+            return[currentPlayer, enemyPlayer];
         },
         sound: function () {
             audioSword.play();
@@ -36,6 +37,7 @@ export default {
         ability: function (currentPlayer, enemyPlayer) {
             currentPlayer.equip = 'shield';
             //play shield equip noise.
+            return[currentPlayer, enemyPlayer];
         },
         sound: function () {
             audioShield.play();
@@ -69,7 +71,8 @@ export default {
         effect: 4,
         ability: function (currentPlayer, enemyPlayer) {
             currentPlayer.equip = 'doubleStrike';
-            currentPlayer.currentAttackPower = this.effect;
+            currentPlayer.attack = currentPlayer.baseAtk * this.effect;
+            return[currentPlayer, enemyPlayer];
         },
         sound: function () {
             audioDblStrike.play();
@@ -79,7 +82,8 @@ export default {
         effect: 6,
         ability: function (currentPlayer, enemyPlayer) {
             currentPlayer.equip = 'tripleStrike';
-            currentPlayer.currentAttackPower = this.effect;
+            currentPlayer.attack = currentPlayer.baseAtk * this.effect;
+            return[currentPlayer, enemyPlayer];
         },
         sound: function () {
             audioTriStrike.play();
