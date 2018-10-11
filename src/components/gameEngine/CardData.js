@@ -1,3 +1,4 @@
+//import images
 import attack from '../../assets/images/cards/attackCard.jpg';
 import shield from '../../assets/images/cards/shieldCard.jpg';
 import heal from '../../assets/images/cards/healCard.jpg';
@@ -5,17 +6,27 @@ import bahamut from '../../assets/images/cards/bahamutCard.jpg';
 import doubleStrike from '../../assets/images/cards/doubleStrikeCard.jpg';
 import tripleStrike from '../../assets/images/cards/tripleStrikeCard.jpg';
 
+//import audios
+// var audioSword =  new Audio('audio/sword.mp3');
+// var audioShield =  new Audio('audio/shield.mp3');
+// var audioHeal =  new Audio('audio/heal.mp3');
+// var audioBahamut =  new Audio('audio/bahamut.mp3');
+// var audioDblStrike =  new Audio('audio/dblStrike.mp3');
+// var audioTriStrike =  new Audio('audio/triStrike.mp3');
+
+
+
 export default {
     attack: {name: 'attack',
         address: attack,
         effect: 1,
-        ability: function () {
-            debugger;
-            if ( targetPlayer.cardHeld === 'shield'){
-                setTimeout(cardName.shield.sound,1000);
+        ability: function (currentPlayer, enemyPlayer) {
+            if ( enemyPlayer.equip === 'shield'){
+                // setTimeout(cardName.shield.sound,1000);
             }else{
-                targetPlayer.health -= currentPlayer.currentAttackPower;
+                enemyPlayer.health -= currentPlayer.attack;
             }
+            return[currentPlayer, enemyPlayer];
         },
         sound: function () {
             audioSword.play();
@@ -23,10 +34,10 @@ export default {
     shield: {name: 'shield',
         address:shield ,
         effect: 0,
-        ability: function () {
-            currentPlayer.cardHeld = 'shield';
-            playerHeldCardEquipped( this.address );
+        ability: function (currentPlayer, enemyPlayer) {
+            currentPlayer.equip = 'shield';
             //play shield equip noise.
+            return[currentPlayer, enemyPlayer];
         },
         sound: function () {
             audioShield.play();
@@ -34,9 +45,9 @@ export default {
     heal: {name: 'heal',
         address: heal,
         effect: 2,//how much it heals
-        ability: function () {
+        ability: function (currentPlayer, enemyPlayer) {
             currentPlayer.health += this.effect;
-            //heal noise
+            return[currentPlayer, enemyPlayer];
         },
         sound: function () {
             audioHeal.play();
@@ -44,13 +55,13 @@ export default {
     bahamut: {name: 'bahamut',
         address: bahamut,
         effect: 2,
-        ability: function(){
+        ability: function(currentPlayer, enemyPlayer){
             //damage both players.
-            for (var i = 0; i < 2; i++){
-                totalPlayers[i].health -= this.effect;
-            }
-            setTimeout(resetDeck, 2000);
-            resetPlayerAbilitys();
+            currentPlayer.health -= this.effect;
+            enemyPlayer.health -= this.effect;
+            return[currentPlayer, enemyPlayer];
+            // setTimeout(resetDeck, 2000);
+            // resetPlayerAbilitys();
         },
         sound: function () {
             audioBahamut.play();
@@ -58,10 +69,10 @@ export default {
     doubleStrike: {name: 'doubleStrike',
         address: doubleStrike,
         effect: 4,
-        ability: function () {
-            currentPlayer.cardHeld = 'doubleStrike';
-            currentPlayer.currentAttackPower = this.effect;
-            playerHeldCardEquipped( this.address );
+        ability: function (currentPlayer, enemyPlayer) {
+            currentPlayer.equip = 'doubleStrike';
+            currentPlayer.attack = currentPlayer.baseAtk * this.effect;
+            return[currentPlayer, enemyPlayer];
         },
         sound: function () {
             audioDblStrike.play();
@@ -69,10 +80,10 @@ export default {
     tripleStrike: {name: 'tripleStrike',
         address: tripleStrike,
         effect: 6,
-        ability: function () {
-            currentPlayer.cardHeld = 'tripleStrike';
-            currentPlayer.currentAttackPower = this.effect;
-            playerHeldCardEquipped( this.address );
+        ability: function (currentPlayer, enemyPlayer) {
+            currentPlayer.equip = 'tripleStrike';
+            currentPlayer.attack = currentPlayer.baseAtk * this.effect;
+            return[currentPlayer, enemyPlayer];
         },
         sound: function () {
             audioTriStrike.play();

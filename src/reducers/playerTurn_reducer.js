@@ -1,8 +1,12 @@
 import types from '../actions/types';
 
 const DEFAULT_STATE = {
-    currentTurn: 0
+    currentTurn: 0,
+    atkCardSeen:0,
+    bahamutSeen:0
 }
+
+//if attackcard is pulled DO NOT PROGRESS UNTIL two attackcards exist.
 
 function playerTurnReducer( state=DEFAULT_STATE, action){
     switch(action.type){

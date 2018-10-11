@@ -1,28 +1,29 @@
 import React,{ Component } from 'react';
 import { connect } from 'react-redux';
-import { revealCard, randomizeDeck } from '../../actions';
+import { revealCard, randomizeDeck, checkAbility } from '../../actions';
 
 import Card from '../card';
 
 
 class GameBoard extends Component{
 
-    revealChildCard(id, name){
+    revealChildCard(id, name, pTurn){
             this.props.revealCard(id, name);
+            this.props.checkAbility(name,pTurn);
     }
 
     addCardToField(){
         const stateDeck = this.props.stateDeck;
         var deck = [];
         for(var i = 0; i < 9; i++){
-            deck.push(<Card key={i} id={i} cardData={stateDeck[i]} revealCard={this.revealChildCard.bind(this,i,stateDeck[i].name)} />);
+            deck.push(<Card key={i} id={i} cardData={stateDeck[i]} revealCard={this.revealChildCard.bind(this,i,stateDeck[i].name, this.props.turn)} />);
         }
 
         return deck;
     }
 
     componentDidMount(){
-        this.props.randomizeDeck();
+        this.props.randomizeDeck(this.props.stateDeck);
     }
 
     render(){
@@ -45,4 +46,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, { revealCard, randomizeDeck })(GameBoard);
+export default connect(mapStateToProps, { revealCard, randomizeDeck, checkAbility })(GameBoard);
