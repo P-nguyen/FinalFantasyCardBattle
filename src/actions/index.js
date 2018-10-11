@@ -16,3 +16,13 @@ export function randomizeDeck(){
         type: types.RANDOMIZE_DECK
     }
 }
+
+export function checkAbility(name, currentTurn){
+    return {
+        type: types.CHECK_ABILITY,
+        payload: {
+            name: name,
+            currentTurn: currentTurn%2
+        }
+    }
+}
