@@ -53,3 +53,9 @@ export function unrevealCards( array, index ){
         payload:array
     }
 }
+
+export function unPause(){
+    return{
+        type: types.UNPAUSE
+    }
+}
