@@ -3,5 +3,6 @@ export default {
     REVEAL_CARD: 'reveal_card',
     CHECK_ABILITY: 'check_ability',
     UNREVEAL_CARDS: 'unreveal_cards',
-    UNPAUSE: 'unpause'
+    UNPAUSE: 'unpause',
+    NEXTDISPLAY: 'next_display'
 };

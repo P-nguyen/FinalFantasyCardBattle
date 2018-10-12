@@ -59,3 +59,9 @@ export function unPause(){
         type: types.UNPAUSE
     }
 }
+
+export function nextDisplay(){
+    return{
+        type: types.NEXTDISPLAY
+    }
+}

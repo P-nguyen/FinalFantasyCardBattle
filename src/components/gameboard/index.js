@@ -8,10 +8,9 @@ import Card from '../card';
 class GameBoard extends Component{
 
     revealChildCard(id, name, pTurn){
-            console.log(this.props);
 
             if(this.props.turnInfo.pause){
-                return
+                return;
             }
 
             this.props.revealCard(id, name);
@@ -19,22 +18,22 @@ class GameBoard extends Component{
             //issue with atk logic on how its seen
             if(name === 'attack'){
                 if(this.props.turnInfo.lastCardSeen === 'attack'){
-                    setTimeout(this.props.checkAbility, 1000, name, pTurn);
+                    this.props.checkAbility(name, pTurn);
                     //flip all recent cards back
                 }
-                    setTimeout(this.props.unPause,1000);
+                    // setTimeout(this.props.unPause,1000);
             }else if (name === 'bahamut'){
                 if(this.props.turnInfo.lastCardSeen === 'attack'){
                     setTimeout(this.props.unrevealCards, 1000, this.props.stateDeck, id);
                 }else{
-                    setTimeout(this.props.checkAbility, 1000, name, pTurn);
+                    this.props.checkAbility(name, pTurn);
                     //reset all cards.
                 }
             }else{
                 if(this.props.turnInfo.lastCardSeen === 'attack'){
                     setTimeout(this.props.unrevealCards, 1000, this.props.stateDeck, id);
                 }else{
-                    setTimeout(this.props.checkAbility, 1000, name, pTurn);
+                    this.props.checkAbility(name, pTurn);
                 }
             }
     }
@@ -59,7 +58,7 @@ class GameBoard extends Component{
                 <div className='row no-gutters'>
                     {this.addCardToField()}
                 </div>
-                <h1>{ this.props.turn%2 ? 'Player 2' : 'Player 1'}</h1>
+                <h1>{ this.props.turn%2 ? 'Player 2 Turn' : 'Player 1 Turn'}</h1>
             </div>
         );
     };

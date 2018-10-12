@@ -16,6 +16,8 @@ need to add comparison logic funcionts in game engine
 
 need to add turn selections
 
+
+**eventually you'll have a player select screen where you can pick and set state then.
 need to add reducer for player
         IE player current holds what card?
         does it match the attack card?
