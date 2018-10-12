@@ -19,15 +19,14 @@ class GameBoard extends Component{
             if(name === 'attack'){
                 if(this.props.turnInfo.lastCardSeen === 'attack'){
                     this.props.checkAbility(name, pTurn);
-                    //flip all recent cards back
+                    setTimeout(this.props.randomizeDeck,1000, this.props.stateDeck);
                 }
-                    // setTimeout(this.props.unPause,1000);
             }else if (name === 'bahamut'){
                 if(this.props.turnInfo.lastCardSeen === 'attack'){
                     setTimeout(this.props.unrevealCards, 1000, this.props.stateDeck, id);
                 }else{
                     this.props.checkAbility(name, pTurn);
-                    //reset all cards.
+                    setTimeout(this.props.randomizeDeck,1000, this.props.stateDeck);
                 }
             }else{
                 if(this.props.turnInfo.lastCardSeen === 'attack'){
