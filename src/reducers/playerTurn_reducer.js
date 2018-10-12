@@ -3,7 +3,9 @@ import types from '../actions/types';
 const DEFAULT_STATE = {
     currentTurn: 0,
     lastCardSeen:'',
-    pause:false
+    pause:false,
+    displayCard: false,
+    displayPlayerTurn: false
 }
 
 //add in pause state for displays.
@@ -23,14 +25,15 @@ function playerTurnReducer( state=DEFAULT_STATE, action){
             }
             return { currentTurn: turn,
                 lastCardSeen: action.payload.name,
-                pause:true
+                pause:true,
+                displayCard:true,
                 };
         case types.RANDOMIZE_DECK:
             return { ...state, lastCardSeen: ''}
-        case types.CHECK_ABILITY:
-        case types.UNREVEAL_CARDS:
         case types.UNPAUSE:
-            return { ...state, pause:false }
+            return { ...state, pause:false, displayPlayerTurn:false }
+        case types.NEXTDISPLAY:
+            return { ...state, displayCard:false, displayPlayerTurn:true}
         default:
             return state;
     }
