@@ -43,6 +43,8 @@ function deckReducer( state = DEFAULT_STATE, action){
             };
         case types.RANDOMIZE_DECK:
             return {deck:action.payload};
+        case types.UNREVEAL_CARDS:
+            return {deck:action.payload};
         default:
             return state;
     }
