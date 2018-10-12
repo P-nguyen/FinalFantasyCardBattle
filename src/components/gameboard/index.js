@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import { connect } from 'react-redux';
-import { revealCard, randomizeDeck, checkAbility, unrevealCards } from '../../actions';
+import { revealCard, randomizeDeck, checkAbility, unrevealCards, unPause } from '../../actions';
 
 import Card from '../card';
 
@@ -9,26 +9,32 @@ class GameBoard extends Component{
 
     revealChildCard(id, name, pTurn){
             console.log(this.props);
+
+            if(this.props.turnInfo.pause){
+                return
+            }
+
             this.props.revealCard(id, name);
 
             //issue with atk logic on how its seen
             if(name === 'attack'){
                 if(this.props.turnInfo.lastCardSeen === 'attack'){
-                    this.props.checkAbility(name,pTurn);
-                    //flip all cards back
+                    setTimeout(this.props.checkAbility, 1000, name, pTurn);
+                    //flip all recent cards back
                 }
-                    //flip back attack and new reveal card.
+                    setTimeout(this.props.unPause,1000);
             }else if (name === 'bahamut'){
                 if(this.props.turnInfo.lastCardSeen === 'attack'){
-                    this.props.unrevealCards(this.props.stateDeck, id);
+                    setTimeout(this.props.unrevealCards, 1000, this.props.stateDeck, id);
                 }else{
-                    this.props.checkAbility(name,pTurn);
+                    setTimeout(this.props.checkAbility, 1000, name, pTurn);
+                    //reset all cards.
                 }
             }else{
                 if(this.props.turnInfo.lastCardSeen === 'attack'){
-                    this.props.unrevealCards(this.props.stateDeck, id);
+                    setTimeout(this.props.unrevealCards, 1000, this.props.stateDeck, id);
                 }else{
-                    this.props.checkAbility(name,pTurn);
+                    setTimeout(this.props.checkAbility, 1000, name, pTurn);
                 }
             }
     }
@@ -68,4 +74,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, { revealCard, randomizeDeck, checkAbility, unrevealCards })(GameBoard);
+export default connect(mapStateToProps, { revealCard, randomizeDeck, checkAbility, unrevealCards, unPause })(GameBoard);

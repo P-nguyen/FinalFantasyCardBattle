@@ -2,10 +2,13 @@ import types from '../actions/types';
 
 const DEFAULT_STATE = {
     currentTurn: 0,
-    lastCardSeen:''
+    lastCardSeen:'',
+    pause:false
 }
 
 //add in pause state for displays.
+//ie if pause is true then don't allow any clicks on cards
+//if its false then allow pass through. "no return"
 
 function playerTurnReducer( state=DEFAULT_STATE, action){
     switch(action.type){
@@ -19,10 +22,15 @@ function playerTurnReducer( state=DEFAULT_STATE, action){
                 turn = ++state.currentTurn;
             }
             return { currentTurn: turn,
-                lastCardSeen: action.payload.name
+                lastCardSeen: action.payload.name,
+                pause:true
                 };
         case types.RANDOMIZE_DECK:
             return { ...state, lastCardSeen: ''}
+        case types.CHECK_ABILITY:
+        case types.UNREVEAL_CARDS:
+        case types.UNPAUSE:
+            return { ...state, pause:false }
         default:
             return state;
     }
