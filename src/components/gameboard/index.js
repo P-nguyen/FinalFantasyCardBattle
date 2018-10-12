@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import { connect } from 'react-redux';
-import { revealCard, randomizeDeck, checkAbility } from '../../actions';
+import { revealCard, randomizeDeck, checkAbility, unrevealCards } from '../../actions';
 
 import Card from '../card';
 
@@ -8,8 +8,29 @@ import Card from '../card';
 class GameBoard extends Component{
 
     revealChildCard(id, name, pTurn){
+            console.log(this.props);
             this.props.revealCard(id, name);
-            this.props.checkAbility(name,pTurn);
+
+            //issue with atk logic on how its seen
+            if(name === 'attack'){
+                if(this.props.turnInfo.lastCardSeen === 'attack'){
+                    this.props.checkAbility(name,pTurn);
+                    //flip all cards back
+                }
+                    //flip back attack and new reveal card.
+            }else if (name === 'bahamut'){
+                if(this.props.turnInfo.lastCardSeen === 'attack'){
+                    this.props.unrevealCards(this.props.stateDeck, id);
+                }else{
+                    this.props.checkAbility(name,pTurn);
+                }
+            }else{
+                if(this.props.turnInfo.lastCardSeen === 'attack'){
+                    this.props.unrevealCards(this.props.stateDeck, id);
+                }else{
+                    this.props.checkAbility(name,pTurn);
+                }
+            }
     }
 
     addCardToField(){
@@ -41,9 +62,10 @@ class GameBoard extends Component{
 
 function mapStateToProps(state){
     return {
-        stateDeck: state.cardDeck.deck
+        stateDeck: state.cardDeck.deck,
+        turnInfo: state.currentTurn
 
     }
 }
 
-export default connect(mapStateToProps, { revealCard, randomizeDeck, checkAbility })(GameBoard);
+export default connect(mapStateToProps, { revealCard, randomizeDeck, checkAbility, unrevealCards })(GameBoard);

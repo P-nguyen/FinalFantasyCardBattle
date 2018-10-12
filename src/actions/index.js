@@ -19,6 +19,7 @@ export function randomizeDeck(array){
     while(newArrayOrder.length <= arrayLength){
         let rndNumber = Math.floor(Math.random()*array.length);
 
+        array[rndNumber].revealed = false;
         newArrayOrder.push(array[rndNumber]);
         array.splice([rndNumber],1);
     }
@@ -36,5 +37,19 @@ export function checkAbility(name, currentTurn){
             name: name,
             currentTurn: currentTurn%2
         }
+    }
+}
+
+export function unrevealCards( array, index ){
+    for(var i = 0; i < array.length; i++){
+        if (array[i].name === 'attack'){
+            array[i].revealed = false;
+        }
+    }
+
+    array[index].revealed = false;
+    return{
+        type: types.UNREVEAL_CARDS,
+        payload:array
     }
 }
