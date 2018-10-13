@@ -1,6 +1,6 @@
 import React ,{ Component }from 'react';
 import { connect } from 'react-redux';
-import { displayTurn, displayWin, unPause } from '../../actions';
+import { displayTurn, displayWin, unPause, resetPlayers, randomizeDeck } from '../../actions';
 
 import '../../assets/css/displayModal.css'
 import cardData from '../gameEngine/CardData';
@@ -20,7 +20,7 @@ function DisplayModal(props){
             <div className={props.turnInfo.pause ? "display-modal show": "display-modal"}>
                 <div className="display-modal-content row align-items-center">
                     {props.turnInfo.displayCard && <BasicReveal name={props.turnInfo.lastCardSeen} callback={winText? props.displayWin : props.displayTurn}/>}
-                    {props.turnInfo.displayWin && <WinModal text={winText} callback={props.displayTurn}/>}
+                    {props.turnInfo.displayWin && <WinModal text={winText} callback={props.displayTurn} resetPlayers={props.resetPlayers} resetDeck={props.randomizeDeck.bind(this, props.deck)}/>}
                     {props.turnInfo.displayPlayerTurn && <PlayerTurn turn={props.turnInfo} callback={props.unPause}/>}
                 </div>
             </div>  
@@ -47,6 +47,11 @@ class WinModal extends Component{
         setTimeout(this.props.callback,2000);
     }
 
+    componentWillUnmount(){
+        this.props.resetDeck();
+        this.props.resetPlayers();
+    }
+
     render(){
         return(
         <div className="col-12 text-center">
@@ -67,24 +72,11 @@ class PlayerTurn extends Component{
         </div>)
     }
 }
-// function WinModal(){
 
-// }
-
-
-//pause happens.
-//always activate reveal card
-//once reveal is finished run animations
-
-    //look at player stats
-    //if one is dead Congrates happens
-    //else nothing and move on.
-
-//show next player turn
-//unpause
 
 function mapStateToProps(state){
     return {
+        deck:state.cardDeck.deck,
         turnInfo: state.currentTurn,
         player1Health: state.players.player1.health,
         player2Health: state.players.player2.health
@@ -92,4 +84,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, { displayTurn, displayWin, unPause })(DisplayModal);
+export default connect(mapStateToProps, { displayTurn, displayWin, unPause, resetPlayers, randomizeDeck })(DisplayModal);

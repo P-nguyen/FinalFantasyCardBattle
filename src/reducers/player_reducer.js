@@ -8,7 +8,7 @@ const DEFAULT_STATE = {
         health: 10,
         attack: 1,
         baseAtk:1,
-        equip: null //this could be text like shield or block to reference an ability
+        equip: null
     },
     player2:{
         name: 'p2',
@@ -31,6 +31,23 @@ function playerReducer( state = DEFAULT_STATE, action){
                 newState = {player1:array[1], player2:array[0]};
             }
             return newState;
+        case types.RESETPLAYERS:
+            return {...state,
+                player1:{
+                name: 'p1',
+                health: 10,
+                attack: 1,
+                baseAtk:1,
+                equip: null
+            },
+            player2:{
+                name: 'p2',
+                health: 10,
+                attack: 1,
+                baseAtk:1,
+                equip: null
+            }
+        };
         default:
             return state;
     }
