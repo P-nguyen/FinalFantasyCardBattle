@@ -10,18 +10,8 @@ game logic is called when needed
 
 
 todo.
-image needs to float right for player when on mobile
 
-need to add comparison logic funcionts in game engine
-
-need to add turn selections
-
-
-**eventually you'll have a player select screen where you can pick and set state then.
-need to add reducer for player
-        IE player current holds what card?
-        does it match the attack card?
-        bahamut?
-
-
-create turn based functionality.
+enter screen modal
+win modal
+add in sprite sheet for faces
+graphics

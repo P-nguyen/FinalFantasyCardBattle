@@ -4,5 +4,6 @@ export default {
     CHECK_ABILITY: 'check_ability',
     UNREVEAL_CARDS: 'unreveal_cards',
     UNPAUSE: 'unpause',
-    NEXTDISPLAY: 'next_display'
+    DISPLAYTURN: 'display_turn',
+    DISPLAYWIN: 'display_win'
 };
