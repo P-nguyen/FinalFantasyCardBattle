@@ -5,5 +5,6 @@ export default {
     UNREVEAL_CARDS: 'unreveal_cards',
     UNPAUSE: 'unpause',
     DISPLAYTURN: 'display_turn',
-    DISPLAYWIN: 'display_win'
+    DISPLAYWIN: 'display_win',
+    RESETPLAYERS: 'reset_players'
 };

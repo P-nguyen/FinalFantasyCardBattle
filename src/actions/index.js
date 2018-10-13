@@ -71,3 +71,9 @@ export function displayWin(){
         type: types.DISPLAYWIN
     }
 }
+
+export function resetPlayers(){
+    return{
+        type: types.RESETPLAYERS
+    }
+}
