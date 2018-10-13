@@ -5,7 +5,8 @@ const DEFAULT_STATE = {
     lastCardSeen:'',
     pause:false,
     displayCard: false,
-    displayPlayerTurn: false
+    displayPlayerTurn: false,
+    displayWin:false,
 }
 
 //add in pause state for displays.
@@ -31,9 +32,11 @@ function playerTurnReducer( state=DEFAULT_STATE, action){
         case types.RANDOMIZE_DECK:
             return { ...state, lastCardSeen: ''}
         case types.UNPAUSE:
-            return { ...state, pause:false, displayPlayerTurn:false }
-        case types.NEXTDISPLAY:
-            return { ...state, displayCard:false, displayPlayerTurn:true}
+            return { ...state, pause:false, displayPlayerTurn:false, displayWin:false }
+        case types.DISPLAYTURN:
+            return { ...state, displayCard:false, displayWin:false, displayPlayerTurn:true}
+        case types.DISPLAYWIN:
+            return { ...state, displayWin:true, displayCard:false }
         default:
             return state;
     }

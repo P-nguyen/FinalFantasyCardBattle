@@ -60,8 +60,14 @@ export function unPause(){
     }
 }
 
-export function nextDisplay(){
+export function displayTurn(){
     return{
-        type: types.NEXTDISPLAY
+        type: types.DISPLAYTURN
+    }
+}
+
+export function displayWin(){
+    return{
+        type: types.DISPLAYWIN
     }
 }
