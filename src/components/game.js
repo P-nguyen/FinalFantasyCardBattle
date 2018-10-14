@@ -4,11 +4,9 @@ import '../assets/css/game.css';
 import Player from './player';
 import GameBoard from './gameBoard';
 import DisplayModal from './displayModal';
-import { unPause } from '../actions';
 
 function Game(props){
     return (
-        
             <div id ='game' className='row no-gutters'>
 
                 <Player player={props.player1}/>

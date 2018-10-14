@@ -77,3 +77,9 @@ export function resetPlayers(){
         type: types.RESETPLAYERS
     }
 }
+
+export function startGame(){
+    return{
+        type: types.STARTGAME
+    }
+}
