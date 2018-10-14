@@ -6,5 +6,6 @@ export default {
     UNPAUSE: 'unpause',
     DISPLAYTURN: 'display_turn',
     DISPLAYWIN: 'display_win',
-    RESETPLAYERS: 'reset_players'
+    RESETPLAYERS: 'reset_players',
+    STARTGAME: 'start_game'
 };

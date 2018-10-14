@@ -1,16 +1,22 @@
 import React from 'react';
-import '../assets/css/app.css';
-import logo from '../assets/images/logo.svg';
+import { connect } from 'react-redux';
+import { startGame } from '../actions'
+
+import Game from './game';
+import SplashScreen from './startScreen';
 
 
-// not in use right now.
-
-const App = () => (
+const App = (props) => (
     <div>
-        <div className="app">
-          
-        </div>
+        {props.beginGame ?<Game /> : <SplashScreen start={props.startGame}/>}
     </div>
 );
 
-export default App;
+function mapStateToProps(state){
+    return{
+        beginGame: state.currentTurn.startGame
+    };
+}
+
+export default connect(mapStateToProps,{ startGame})(App);
+

@@ -12,6 +12,5 @@ game logic is called when needed
 todo.
 
 enter screen modal
-win modal
 add in sprite sheet for faces
 graphics
