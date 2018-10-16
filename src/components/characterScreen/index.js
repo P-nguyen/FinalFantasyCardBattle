@@ -8,7 +8,7 @@ const CharacterSelectionScreen = ()=>{
     let avatars = [];
 
     keys.map((name,index)=>{
-        avatars.push(<Avatar key={index} name={name} img={Characters[name].img}/>);
+        avatars.push(<Avatar key={index} name={name} charInfo={Characters[name]}/>);
     });
 
     return(

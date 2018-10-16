@@ -1,16 +1,40 @@
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700");
 
-
-.selCharacterImg{
+.CSel .frame{
     background: purple;
     width: 76px;
     padding-top: 116px;
     margin: auto;
+    position: relative;
+}
+.CSel .statsInfo{
+    position: absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,.75);
+    opacity: 0;
+}
+
+.CSel .statsInfo p{
+    font-weight: 700;
+    margin: 1rem 0 0;
+}
+
+.CSel .statsInfo:hover{
+    opacity: 1;
+}
+
+.CSel .selCharacterImg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
     background-repeat: no-repeat;
     animation: blink 6s steps(2) infinite;
 }
 
-.charHolder{
+.CSel .charHolder{
     margin-top: 10vh;
 }
 
