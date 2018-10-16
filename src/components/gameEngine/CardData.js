@@ -25,6 +25,7 @@ export default {
                 // setTimeout(cardName.shield.sound,1000);
             }else{
                 enemyPlayer.health -= currentPlayer.attack;
+                enemyPlayer.hurt = true;
             }
             return[currentPlayer, enemyPlayer];
         },
@@ -58,7 +59,9 @@ export default {
         ability: function(currentPlayer, enemyPlayer){
             //damage both players.
             currentPlayer.health -= this.effect;
+            currentPlayer.hurt = true;
             enemyPlayer.health -= this.effect;
+            enemyPlayer.hurt = true;
             return[currentPlayer, enemyPlayer];
             // setTimeout(resetDeck, 2000);
             // resetPlayerAbilitys();

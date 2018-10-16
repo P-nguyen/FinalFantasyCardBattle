@@ -1,21 +1,20 @@
 import types from '../actions/types';
 import cardData from '../components/gameEngine/CardData';
 
+const PlayerBASE = {
+        health: 10,
+        attack: 1,
+        baseAtk:1,
+        equip: null,
+        hurt: false
 
+}
 const DEFAULT_STATE = {
-    player1:{
-        name: 'p1',
-        health: 10,
-        attack: 1,
-        baseAtk:1,
-        equip: null
+    player1:{...PlayerBASE,
+        name: 'p1'
     },
-    player2:{
-        name: 'p2',
-        health: 10,
-        attack: 1,
-        baseAtk:1,
-        equip: null
+    player2:{...PlayerBASE,
+        name: 'p2'
     }
 };
 
@@ -33,21 +32,19 @@ function playerReducer( state = DEFAULT_STATE, action){
             return newState;
         case types.RESETPLAYERS:
             return {...state,
-                player1:{
-                name: 'p1',
-                health: 10,
-                attack: 1,
-                baseAtk:1,
-                equip: null
+                player1:{...PlayerBASE,
+                    name: 'p1'
             },
             player2:{
-                name: 'p2',
-                health: 10,
-                attack: 1,
-                baseAtk:1,
-                equip: null
+                ...PlayerBASE,
+                name: 'p2'
             }
         };
+        case types.DAMAGE:
+            newState = {...state};
+            newState.player1.hurt = false;
+            newState.player2.hurt = false;
+            return newState;
         default:
             return state;
     }
