@@ -11,12 +11,17 @@ game logic is called when needed
 
 todo.
 
-remove ability to reclick cards and highlight cards
+*remove ability to reclick cards and highlight cards
 
-add in sprite sheet for faces
+*add in sprite sheet for faces
+add in card for playerEQUIP
+
+add in player turn box highlight borders?
+
 graphics
 add music and sound effects
 
 
+BLUESKY
 add in character selection screen and stats.
 

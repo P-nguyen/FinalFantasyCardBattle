@@ -1,5 +1,5 @@
 import types from '../actions/types';
-import cardData from '../components/gameEngine/CardData';
+import cardData from '../components/gameEngine/cardData';
 
 const PlayerBASE = {
         health: 10,
@@ -11,11 +11,11 @@ const PlayerBASE = {
 }
 const DEFAULT_STATE = {
     player1:{...PlayerBASE,
-        name: 'p1'
     },
     player2:{...PlayerBASE,
-        name: 'p2'
-    }
+    },
+    p1Character:'Wol',
+    p2Character:'Cloud'
 };
 
 function playerReducer( state = DEFAULT_STATE, action){
@@ -24,20 +24,18 @@ function playerReducer( state = DEFAULT_STATE, action){
             let newState;
             if(action.payload.currentTurn === 0){
                 let array = cardData[action.payload.name].ability(state.player1, state.player2);
-                newState = {player1:array[0], player2:array[1]};
+                newState = {...state, player1:array[0], player2:array[1]};
             }else{
                 let array = cardData[action.payload.name].ability(state.player2, state.player1);
-                newState = {player1:array[1], player2:array[0]};
+                newState = {...state, player1:array[1], player2:array[0]};
             }
             return newState;
         case types.RESETPLAYERS:
             return {...state,
-                player1:{...PlayerBASE,
-                    name: 'p1'
+                player1:{...PlayerBASE
             },
             player2:{
-                ...PlayerBASE,
-                name: 'p2'
+                ...PlayerBASE
             }
         };
         case types.DAMAGE:

@@ -9,11 +9,11 @@ function Game(props){
     return (
             <div id ='game' className='row no-gutters'>
 
-                <Player player={props.player1}/>
+                <Player player={props.player1} character={props.p1Char} reverse={true}/>
                 
                 <GameBoard turn={props.currentTurn.currentTurn}/>
             
-                <Player player={props.player2} />
+                <Player player={props.player2} character={props.p2Char} />
 
                 <DisplayModal/>
 
@@ -25,6 +25,8 @@ function mapStateToProps(state){
     return{
         player1:state.players.player1,
         player2:state.players.player2,
+        p1Char:state.players.p1Character,
+        p2Char:state.players.p2Character,
         currentTurn: state.currentTurn
     };
 }
