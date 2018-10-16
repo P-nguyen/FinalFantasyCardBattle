@@ -4,12 +4,11 @@ var avatarStats = require('./playerStats.json'); //will use when more characters
 import cloud from '../../assets/images/characters/cloud/cloud_sprite.png';
 
 export default function Player( props ){
-    
     return (
         <div className='player col-sm-3'>
             <div className='row text-center no-gutters'>
                 <div className='col-sm-12 col-4'>
-                    <div className='characterImg blink' style={{backgroundImage:`url(${cloud})`}}></div>
+                    <div className={props.player.hurt ? 'characterImg hurt':'characterImg blink'} style={{backgroundImage:`url(${cloud})`}}></div>
                     <h5>face</h5>
                 </div>
                 <div className='col-sm-12 col-4'>

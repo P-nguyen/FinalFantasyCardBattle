@@ -11,7 +11,7 @@
     animation: blink 6s steps(2) infinite;
 }
 .characterImg.hurt{
-    animation: hurt .5s steps(3);
+    animation: hurt 1.5s steps(3);
 }
 @keyframes blink{
     0%{background-position: 0 0;}
@@ -22,6 +22,8 @@
 
 @keyframes hurt{
     0%{background-position: -228px 0;
+        filter:contrast(150%);}
+    30%{background-position: -228px 0;
         filter:contrast(150%);}
     100%{background-position: 0 0;
         filter:contrast(100%);}

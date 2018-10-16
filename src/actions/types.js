@@ -7,5 +7,6 @@ export default {
     DISPLAYTURN: 'display_turn',
     DISPLAYWIN: 'display_win',
     RESETPLAYERS: 'reset_players',
-    STARTGAME: 'start_game'
+    STARTGAME: 'start_game',
+    DAMAGE: 'damage_player'
 };

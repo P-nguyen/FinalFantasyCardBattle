@@ -83,3 +83,9 @@ export function startGame(){
         type: types.STARTGAME
     }
 }
+
+export function unDamagePlayer( ){
+    return{
+        type: types.DAMAGE,
+    }
+}

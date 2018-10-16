@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import { connect } from 'react-redux';
-import { revealCard, randomizeDeck, checkAbility, unrevealCards, unPause } from '../../actions';
+import { revealCard, randomizeDeck, checkAbility, unrevealCards, unPause, unDamagePlayer } from '../../actions';
 
 import Card from '../card';
 
@@ -34,6 +34,8 @@ class GameBoard extends Component{
                     this.props.checkAbility(name, pTurn);
                 }
             }
+
+            setTimeout(this.props.unDamagePlayer,1500);
     }
 
     addCardToField(){
@@ -71,4 +73,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, { revealCard, randomizeDeck, checkAbility, unrevealCards, unPause })(GameBoard);
+export default connect(mapStateToProps, { revealCard, randomizeDeck, checkAbility, unrevealCards, unPause, unDamagePlayer })(GameBoard);
