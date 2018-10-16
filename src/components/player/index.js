@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/css/player.css';
-var avatarStats = require('./playerStats.json');
-
+var avatarStats = require('./playerStats.json'); //will use when more characters exist.
+import cloud from '../../assets/images/characters/cloud/cloud_sprite.png';
 
 export default function Player( props ){
     
@@ -9,7 +9,7 @@ export default function Player( props ){
         <div className='player col-sm-3'>
             <div className='row text-center no-gutters'>
                 <div className='col-sm-12 col-4'>
-                    <div className='characterImg'></div>
+                    <div className='characterImg blink' style={{backgroundImage:`url(${cloud})`}}></div>
                     <h5>face</h5>
                 </div>
                 <div className='col-sm-12 col-4'>
