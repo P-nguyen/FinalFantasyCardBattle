@@ -1,14 +1,35 @@
 .characterImg{
     background: purple;
-    width: 50%;
-    padding-top: 50%;
+    width: 76px;
+    padding-top: 116px;
     margin: 10px auto;
+
+    background-repeat: no-repeat;
+}
+
+.characterImg.blink{
+    animation: blink 6s steps(2) infinite;
+}
+.characterImg.hurt{
+    animation: hurt .5s steps(3);
+}
+@keyframes blink{
+    0%{background-position: 0 0;}
+    4%{background-position: -152px 0;}
+    8%{background-position: 0 0;}
+    100%{background-position: 0 0;}
+}
+
+@keyframes hurt{
+    0%{background-position: -228px 0;
+        filter:contrast(150%);}
+    100%{background-position: 0 0;
+        filter:contrast(100%);}
 }
 
 .player {
     display: inline-block;
-    /* width: 20%;
-    height: 100%; */
     background: blue;
     vertical-align: top;
 }
+
