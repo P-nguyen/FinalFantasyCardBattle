@@ -4,7 +4,6 @@ var avatarStats = require('./playerStats.json'); //will use when more characters
 import cloud from '../../assets/images/characters/cloud/cloud_sprite.png';
 
 export default function Player( props ){
-    console.log(props);
     return (
         <div className='player col-sm-3'>
             <div className='row text-center no-gutters'>
