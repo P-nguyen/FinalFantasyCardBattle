@@ -8,8 +8,7 @@ import Card from '../card';
 class GameBoard extends Component{
 
     revealChildCard(id, name, pTurn){
-
-            if(this.props.turnInfo.pause){
+            if(this.props.turnInfo.pause || this.props.stateDeck[id].revealed === true){
                 return;
             }
 
