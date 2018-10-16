@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/css/card.css';
 import cardBack from '../../assets/images/cards/cardBack.jpg';
-import cardData from '../gameEngine/CardData';
+import cardData from '../gameEngine/cardData';
 
 
 const Card = (props)=>{

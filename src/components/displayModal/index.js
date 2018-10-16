@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { displayTurn, displayWin, unPause, resetPlayers, randomizeDeck } from '../../actions';
 
 import '../../assets/css/displayModal.css'
-import cardData from '../gameEngine/CardData';
+import cardData from '../gameEngine/cardData';
 
 function DisplayModal(props){
 

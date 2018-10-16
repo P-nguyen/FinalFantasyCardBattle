@@ -1,14 +1,22 @@
 import React from 'react';
 import '../../assets/css/player.css';
-var avatarStats = require('./playerStats.json'); //will use when more characters exist.
-import cloud from '../../assets/images/characters/cloud/cloud_sprite.png';
+// var avatarStats = require('./playerStats.json'); //will use when more characters exist.
+import characters from './playerStats.js';
+// import cloud from '../../assets/images/characters/cloud/cloud_sprite.png';
 
 export default function Player( props ){
+    let imgStyle = {
+        backgroundImage:`url(${characters[props.character].img})`,
+    }
+    if(props.reverse){
+        imgStyle.transform = 'scaleX(-1)'
+    }
+
     return (
         <div className='player col-sm-3'>
             <div className='row text-center no-gutters'>
                 <div className='col-sm-12 col-4'>
-                    <div className={props.player.hurt ? 'characterImg hurt':'characterImg blink'} style={{backgroundImage:`url(${cloud})`}}></div>
+                    <div className={props.player.hurt ? 'characterImg hurt':'characterImg blink'} style={imgStyle}></div>
                     <h5>face</h5>
                 </div>
                 <div className='col-sm-12 col-4'>

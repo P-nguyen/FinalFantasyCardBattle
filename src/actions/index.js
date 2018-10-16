@@ -84,6 +84,18 @@ export function startGame(){
     }
 }
 
+export function selectChar(){
+    return{
+        type: types.SELECTCHAR
+    }
+}
+
+export function dealCards(){
+    return{
+        type: types.DEALCARDS
+    }
+}
+
 export function unDamagePlayer( ){
     return{
         type: types.DAMAGE,

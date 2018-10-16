@@ -1,22 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startGame } from '../actions'
+import { startGame, selectChar, dealCards } from '../actions'
 
 import Game from './game';
 import SplashScreen from './startScreen';
-
+import CharacterSelectionScreen from './characterScreen';
 
 const App = (props) => (
     <div onMouseDown={(e)=>{e.preventDefault()}}> 
-        {props.beginGame ?<Game /> : <SplashScreen start={props.startGame}/>}
+        {console.log(props)}
+        {props.game.startGame ? <SplashScreen start={props.startGame}/> : ''}
+        {props.game.selectChar ? <CharacterSelectionScreen select={props.selectChar}/> : '' }
+        {props.game.dealCards && <Game />}
     </div>
 );
 
 function mapStateToProps(state){
     return{
-        beginGame: state.currentTurn.startGame
+        game: state.game
     };
 }
 
-export default connect(mapStateToProps,{ startGame})(App);
+export default connect(mapStateToProps,{ startGame, selectChar, dealCards })(App);
 

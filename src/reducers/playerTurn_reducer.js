@@ -1,7 +1,6 @@
 import types from '../actions/types';
 
 const DEFAULT_STATE = {
-    startGame: false,
     currentTurn: 0,
     lastCardSeen:'',
     pause:false,
@@ -38,8 +37,6 @@ function playerTurnReducer( state=DEFAULT_STATE, action){
             return { ...state, displayCard:false, displayWin:false, displayPlayerTurn:true}
         case types.DISPLAYWIN:
             return { ...state, displayWin:true, displayCard:false }
-        case types.STARTGAME:
-            return { ...state, startGame:true}
         default:
             return state;
     }

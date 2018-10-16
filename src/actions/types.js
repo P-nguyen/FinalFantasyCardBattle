@@ -8,5 +8,7 @@ export default {
     DISPLAYWIN: 'display_win',
     RESETPLAYERS: 'reset_players',
     STARTGAME: 'start_game',
+    SELECTCHAR: 'select_characters',
+    DEALCARDS: 'deal_cards',
     DAMAGE: 'damage_player'
 };
