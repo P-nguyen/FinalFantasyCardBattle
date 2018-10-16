@@ -7,7 +7,7 @@ import SplashScreen from './startScreen';
 
 
 const App = (props) => (
-    <div>
+    <div onMouseDown={(e)=>{e.preventDefault()}}> 
         {props.beginGame ?<Game /> : <SplashScreen start={props.startGame}/>}
     </div>
 );

@@ -11,6 +11,12 @@ game logic is called when needed
 
 todo.
 
-enter screen modal
+remove ability to reclick cards and highlight cards
+
 add in sprite sheet for faces
 graphics
+add music and sound effects
+
+
+add in character selection screen and stats.
+
