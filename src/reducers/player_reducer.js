@@ -14,8 +14,8 @@ const DEFAULT_STATE = {
     },
     player2:{...PlayerBASE,
     },
-    p1Character:'Wol',
-    p2Character:'Cloud'
+    p1Character:'',
+    p2Character:''
 };
 
 function playerReducer( state = DEFAULT_STATE, action){
@@ -43,6 +43,12 @@ function playerReducer( state = DEFAULT_STATE, action){
             newState.player1.hurt = false;
             newState.player2.hurt = false;
             return newState;
+        case types.SETCHAR:
+        debugger;
+            return {...state,
+                p1Character: action.payload.player1,
+                p2Character: action.payload.player2
+            };
         default:
             return state;
     }

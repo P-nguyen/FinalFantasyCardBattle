@@ -90,14 +90,18 @@ export function selectChar(){
     }
 }
 
-export function dealCards(){
+export function unDamagePlayer(){
     return{
-        type: types.DEALCARDS
+        type: types.DAMAGE,
     }
 }
 
-export function unDamagePlayer( ){
+export function setCharacters(p1Char, p2Char){
     return{
-        type: types.DAMAGE,
+        type: types.SETCHAR,
+        payload:{
+            player1: p1Char,
+            player2: p2Char
+        }
     }
 }
