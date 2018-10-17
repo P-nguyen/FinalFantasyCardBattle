@@ -2,11 +2,10 @@ import React from 'react';
 import '../../assets/css/selectChar.css';
 
 
-const Avatar = (props)=>{
-    console.log(props);
+const Avatar = (props) => {
     return (
     <div className='col'>
-        <div className='frame'>
+        <div className='frame' onClick={props.callback}>
             <div className='selCharacterImg' style={{backgroundImage:`url(${props.charInfo.img})`}}/>
             <div className='statsInfo'><p>H: {props.charInfo.health}</p><p>Atk: {props.charInfo.attack}</p></div>
         </div>
@@ -15,6 +14,7 @@ const Avatar = (props)=>{
     </div>
     );
 }
+
 
 
 export default Avatar;

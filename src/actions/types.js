@@ -9,6 +9,6 @@ export default {
     RESETPLAYERS: 'reset_players',
     STARTGAME: 'start_game',
     SELECTCHAR: 'select_characters',
-    DEALCARDS: 'deal_cards',
-    DAMAGE: 'damage_player'
+    DAMAGE: 'damage_player',
+    SETCHAR: 'set_characters'
 };
