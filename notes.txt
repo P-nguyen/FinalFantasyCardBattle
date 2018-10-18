@@ -14,8 +14,12 @@ todo.
 *remove ability to reclick cards and highlight cards
 
 *add in sprite sheet for faces
-add in card for playerEQUIP
+*add player highlight for char selection. when highlighted show stats?
 
+*player1 and character name?
+*add in card for playerEQUIP
+
+when atk or bahamut shows up, should i reset powerups?
 add in player turn box highlight borders?
 
 graphics
@@ -24,4 +28,6 @@ add music and sound effects
 
 BLUESKY
 add in character selection screen and stats.
+when clicked put P1 and hide the image, remove from being able to click again.
+
 
