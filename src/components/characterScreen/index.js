@@ -20,7 +20,7 @@ class CharacterSelectionScreen extends Component{
         let avatars = [];
     
         keys.map((name,index)=>{
-            avatars.push(<Avatar key={index} name={name} charInfo={Characters[name]} callback={this.selectChar.bind(this,name)}/>);
+            avatars.push(<Avatar key={index} name={name} playerSInfo={this.state} charInfo={Characters[name]} callback={this.selectChar.bind(this,name)}/>);
         });
         return avatars;
     }
