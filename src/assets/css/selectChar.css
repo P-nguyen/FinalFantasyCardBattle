@@ -36,3 +36,17 @@
 .CSel .charHolder{
     margin-top: 10vh;
 }
+
+.CSel .pSelect{
+    position: absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,.75);
+
+}
+
+.CSel .pSelect div{
+    font-size: 2em;
+    font-weight: 700;
+}
