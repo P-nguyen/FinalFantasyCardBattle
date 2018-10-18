@@ -40,6 +40,7 @@ function playerReducer( state = DEFAULT_STATE, action){
                 let array = cardData[action.payload.name].ability(state.player2, state.player1);
                 newState = {...state, player1:array[1], player2:array[0]};
             }
+            cardData[action.payload.name].sound();
             return newState;
         case types.RESETPLAYERS:
             return {...state,
