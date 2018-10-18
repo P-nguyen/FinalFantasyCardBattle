@@ -7,12 +7,12 @@ import doubleStrike from '../../assets/images/cards/doubleStrikeCard.jpg';
 import tripleStrike from '../../assets/images/cards/tripleStrikeCard.jpg';
 
 //import audios
-// var audioSword =  new Audio('audio/sword.mp3');
-// var audioShield =  new Audio('audio/shield.mp3');
-// var audioHeal =  new Audio('audio/heal.mp3');
-// var audioBahamut =  new Audio('audio/bahamut.mp3');
-// var audioDblStrike =  new Audio('audio/dblStrike.mp3');
-// var audioTriStrike =  new Audio('audio/triStrike.mp3');
+// var audioSword =  new Audio('../../assets/audio/sword.mp3');
+// var audioShield =  new Audio('../../assets/audio/shield.mp3');
+// var audioHeal =  new Audio('../../assets/audio/heal.mp3');
+// var audioBahamut =  new Audio('../../assets/audio/bahamut.mp3');
+// var audioDblStrike =  new Audio('../../assets/audio/dblStrike.mp3');
+// var audioTriStrike =  new Audio('../../assets/audio/triStrike.mp3');
 
 
 
@@ -38,7 +38,6 @@ export default {
         ability: function (currentPlayer, enemyPlayer) {
             currentPlayer.equip = 'shield';
             currentPlayer.attack = currentPlayer.baseAtk;
-            //play shield equip noise.
             return[currentPlayer, enemyPlayer];
         },
         sound: function () {
@@ -58,14 +57,11 @@ export default {
         address: bahamut,
         effect: 2,
         ability: function(currentPlayer, enemyPlayer){
-            //damage both players.
             currentPlayer.health -= this.effect;
             currentPlayer.hurt = true;
             enemyPlayer.health -= this.effect;
             enemyPlayer.hurt = true;
             return[currentPlayer, enemyPlayer];
-            // setTimeout(resetDeck, 2000);
-            // resetPlayerAbilitys();
         },
         sound: function () {
             audioBahamut.play();
