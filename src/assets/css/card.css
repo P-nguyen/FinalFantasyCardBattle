@@ -1,15 +1,8 @@
-/* .cardContainer {
-    height: 160px;
-    width: 100px;
-    display: inline-block;
-} */
-
 .cardContainer{
     height: 160px; /*fix this eventually*/
     width: 100px;
     display: inline-block;
     perspective: 1000px;
-    background: red;
 
 }
 .card {
@@ -35,8 +28,6 @@
     border-color: #414042;
 }
 .back{
-    /* background: url('images/cards/cardBack.jpg'); */
-    background: purple;
     background-size: 100% 100%;
 
 }

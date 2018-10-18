@@ -44,7 +44,6 @@ function playerReducer( state = DEFAULT_STATE, action){
             newState.player2.hurt = false;
             return newState;
         case types.SETCHAR:
-        debugger;
             return {...state,
                 p1Character: action.payload.player1,
                 p2Character: action.payload.player2
