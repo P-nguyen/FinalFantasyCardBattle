@@ -24,8 +24,9 @@ when atk or bahamut shows up, should i reset powerups?
 
 *graphics
 *banner
-add music 
+//issues with sound will figure out in figure.
 sound effects
+add music 
 
 add in highlight for character picked???
 mobile ver character select needs to shrink?
