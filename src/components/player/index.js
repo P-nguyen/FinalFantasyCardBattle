@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../assets/css/player.css';
-// var avatarStats = require('./playerStats.json'); //will use when more characters exist.
 import characters from './playerStats.js';
-// import cloud from '../../assets/images/characters/cloud/cloud_sprite.png';
+import cardData from '../gameEngine/cardData.js';
+import cardBack from '../../assets/images/cards/cardBack.jpg';
 
 export default function Player( props ){
     let imgStyle = {
@@ -17,17 +17,16 @@ export default function Player( props ){
             <div className='row text-center no-gutters'>
                 <div className='col-sm-12 col-4'>
                     <div className={props.player.hurt ? 'characterImg hurt':'characterImg blink'} style={imgStyle}></div>
-                    <h5>face</h5>
+                    <h5>{props.character}</h5>
                 </div>
                 <div className='col-sm-12 col-4'>
                     <h1>{props.player.name}</h1>
-                    <h2>Health:{props.player.health}</h2>
-                    <h2>Attack:{props.player.attack}</h2>
+                    <h3>Health:<span>{props.player.health}</span></h3>
+                    <h3>Attack:<span>{props.player.attack}</span></h3>
                 </div>
                 <div className='col-sm-12 col-4'>
-                    <h3>Equip</h3>
-                    <h3>{props.player.equip ?props.player.equip : 'none'}</h3>
-                    {/* eventually replace equip with card images */}
+                    {props.player.equip ?  <img src={cardData[props.player.equip].address}/> : <img src={cardBack}/>}
+                    <h5>Equip</h5>
                 </div>
             </div>
         </div>
