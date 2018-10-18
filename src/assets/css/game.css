@@ -16,3 +16,21 @@
 h1, h2, h3, h5, p{
     font-family: 'Playfair Display SC', serif;
 }
+
+.banner{
+    background: rgb(40, 40, 40);
+    color: white;
+    font-weight: 700;
+    margin: 0;
+    height: 55px;
+}
+@media screen and (max-width: 576px) {
+    .banner{
+        font-size: 25px;
+        height: 35px;
+    }
+    #gameBoard h1{
+        font-size: 1.5rem;
+    }
+    
+}

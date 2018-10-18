@@ -20,10 +20,16 @@ todo.
 *add in card for playerEQUIP
 
 when atk or bahamut shows up, should i reset powerups?
-add in player turn box highlight borders?
+*add in player turn box highlight borders?
 
-graphics
-add music and sound effects
+*graphics
+banner
+add music 
+sound effects
+
+add in highlight for character picked???
+mobile character select needs to shrink?
+
 
 
 BLUESKY
