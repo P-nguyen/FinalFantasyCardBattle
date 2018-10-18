@@ -54,7 +54,7 @@ class GameBoard extends Component{
 
     render(){
         return(
-            <div id ='gameBoard' className='col-sm-6 text-center'>
+            <div id ='gameBoard' className={ this.props.turnInfo.currentTurn%2 ? 'col-sm-6 text-center gameBoardP2' : 'col-sm-6 text-center gameBoardP1'}>
                 <div className='row no-gutters'>
                     {this.addCardToField()}
                 </div>
