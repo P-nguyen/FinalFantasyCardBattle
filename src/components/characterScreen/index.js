@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Characters from '../player/playerStats';
+import Characters from '../gameEngine/playerStats.js';
 
 import Avatar from './characterAvatar.js';
 

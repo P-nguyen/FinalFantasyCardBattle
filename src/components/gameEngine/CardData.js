@@ -37,6 +37,7 @@ export default {
         effect: 0,
         ability: function (currentPlayer, enemyPlayer) {
             currentPlayer.equip = 'shield';
+            currentPlayer.attack = currentPlayer.baseAtk;
             //play shield equip noise.
             return[currentPlayer, enemyPlayer];
         },
@@ -45,7 +46,7 @@ export default {
         }},
     heal: {name: 'heal',
         address: heal,
-        effect: 2,//how much it heals
+        effect: 4,//how much it heals
         ability: function (currentPlayer, enemyPlayer) {
             currentPlayer.health += this.effect;
             return[currentPlayer, enemyPlayer];
@@ -71,10 +72,10 @@ export default {
         }},
     doubleStrike: {name: 'doubleStrike',
         address: doubleStrike,
-        effect: 4,
+        effect: 2,
         ability: function (currentPlayer, enemyPlayer) {
             currentPlayer.equip = 'doubleStrike';
-            currentPlayer.attack = currentPlayer.baseAtk * this.effect;
+            currentPlayer.attack = currentPlayer.baseAtk + this.effect;
             return[currentPlayer, enemyPlayer];
         },
         sound: function () {
@@ -82,10 +83,10 @@ export default {
         }},
     tripleStrike: {name: 'tripleStrike',
         address: tripleStrike,
-        effect: 6,
+        effect: 3,
         ability: function (currentPlayer, enemyPlayer) {
             currentPlayer.equip = 'tripleStrike';
-            currentPlayer.attack = currentPlayer.baseAtk * this.effect;
+            currentPlayer.attack = currentPlayer.baseAtk + this.effect;
             return[currentPlayer, enemyPlayer];
         },
         sound: function () {

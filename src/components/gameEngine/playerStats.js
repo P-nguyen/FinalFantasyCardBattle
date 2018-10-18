@@ -4,63 +4,63 @@ import wol from '../../assets/images/characters/wol/wol.png';
 
 export default{
     Wol:{
-        health: 10,
+        health: 15,
         attack:2,
         img: wol
 
     },
     Firion:{
-        health: 8,
+        health: 14,
         attack:3,
         img:cloud
     },
     Luneth:{
-        health: 8,
-        attack:3,
+        health: 14,
+        attack:1,
         img:cloud
     },
     Cecil:{
-        health: 8,
+        health: 15,
         attack:3,
         img:cloud
     },
     Bartz:{
-        health: 8,
-        attack:3,
+        health: 16,
+        attack:1,
         img:cloud
     },
     Terra:{
-        health: 8,
-        attack:3,
+        health: 17,
+        attack:2,
         img:cloud
     },
     Cloud:{
-        health: 8,
-        attack:3,
+        health: 15,
+        attack:2,
         img:cloud
     },
     Squall:{
-        health: 8,
+        health: 14,
         attack:3,
         img:cloud
     },
     Zidane:{
-        health: 8,
-        attack:3,
+        health: 17,
+        attack:2,
         img:cloud
     },
     Tidus:{
-        health: 8,
-        attack:3,
+        health: 15,
+        attack:2,
         img:cloud
     },
     Vaan:{
-        health: 8,
+        health: 14,
         attack:3,
         img:cloud
     },
     Lightning:{
-        health: 8,
+        health: 16,
         attack:3,
         img:cloud
     }

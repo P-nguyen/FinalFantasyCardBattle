@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../assets/css/player.css';
-import characters from './playerStats.js';
+import characters from '../gameEngine/playerStats.js';
 import cardData from '../gameEngine/cardData.js';
 import cardBack from '../../assets/images/cards/cardBack.jpg';
 
