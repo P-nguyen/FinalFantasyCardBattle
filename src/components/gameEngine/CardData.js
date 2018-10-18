@@ -7,12 +7,20 @@ import doubleStrike from '../../assets/images/cards/doubleStrikeCard.jpg';
 import tripleStrike from '../../assets/images/cards/tripleStrikeCard.jpg';
 
 //import audios
-// var audioSword =  new Audio('../../assets/audio/sword.mp3');
-// var audioShield =  new Audio('../../assets/audio/shield.mp3');
-// var audioHeal =  new Audio('../../assets/audio/heal.mp3');
-// var audioBahamut =  new Audio('../../assets/audio/bahamut.mp3');
-// var audioDblStrike =  new Audio('../../assets/audio/dblStrike.mp3');
-// var audioTriStrike =  new Audio('../../assets/audio/triStrike.mp3');
+import swordSound from '../../assets/audio/sword.mp3';
+import shieldSound from '../../assets/audio/shield.mp3';
+import healSound from '../../assets/audio/heal.mp3';
+import bahamutSound from '../../assets/audio/bahamut.mp3';
+import dblStrikeSound from '../../assets/audio/dblStrike.mp3';
+import triStrikeSound from '../../assets/audio/triStrike.mp3';
+
+
+var audioSword =  new Audio(swordSound);
+var audioShield =  new Audio(shieldSound);
+var audioHeal =  new Audio(healSound);
+var audioBahamut =  new Audio(bahamutSound);
+var audioDblStrike =  new Audio(dblStrikeSound);
+var audioTriStrike =  new Audio(triStrikeSound);
 
 
 
@@ -22,7 +30,7 @@ export default {
         effect: 1,
         ability: function (currentPlayer, enemyPlayer) {
             if ( enemyPlayer.equip === 'shield'){
-                // setTimeout(cardName.shield.sound,1000);
+                setTimeout(cardName.shield.sound,500);
             }else{
                 enemyPlayer.health -= currentPlayer.attack;
                 enemyPlayer.hurt = true;
