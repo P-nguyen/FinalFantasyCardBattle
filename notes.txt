@@ -23,12 +23,12 @@ when atk or bahamut shows up, should i reset powerups?
 *add in player turn box highlight borders?
 
 *graphics
-banner
+*banner
 add music 
 sound effects
 
 add in highlight for character picked???
-mobile character select needs to shrink?
+mobile ver character select needs to shrink?
 
 
 
