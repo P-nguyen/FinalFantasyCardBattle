@@ -7,7 +7,8 @@ import DisplayModal from './displayModal';
 
 function Game(props){
     return (
-            <div id ='game' className='row no-gutters'>
+            <div id ='game' className='row no-gutters text-center'>
+                <h1 className='col-12 banner'>Final Fantasy Card Battle</h1>
 
                 <Player player={props.player1} character={props.p1Char} reverse={true}/>
                 

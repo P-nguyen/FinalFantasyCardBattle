@@ -1,21 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC");
 
 .startScreenModal {
-    display: block;
-    position: fixed;
-    z-index: 5;
-    left: 0;
-    top: 0;
-    width: 100vw;
     height: 100vh;
-    background-color: rgb(255,255,255);
-    text-align: center;
-}
-
-.startScreenModal-content{
-    margin: 10vh 10vw;
-    width: 80%;
-    height: 80%;
 }
 
 .startScreenModal-content img{
