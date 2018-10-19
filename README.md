@@ -2,6 +2,7 @@
 
 > This card game uses React to render the game and Redux to store current game stats.
 > Bootstrap was added in to help position components
+> Game code developed by Peter Nguyen and Artwork/Direction by Anthony Le
 
 ### Game Description
 
