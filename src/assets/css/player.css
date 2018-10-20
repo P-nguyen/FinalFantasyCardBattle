@@ -31,7 +31,7 @@
 .player {
     display: inline-block;
     vertical-align: top;
-
+    height: 90%;
     color: white;
     border-radius: 10px;
     border: 3px solid darkgrey;
@@ -48,4 +48,34 @@
 
 .player h3  span, .player h5{
     font-weight: 700;
+}
+
+@media screen and (max-width: 720px) {
+    .player{
+        height:initial;
+    }
+
+    .player h3, .player h5, .player h3 span{
+        font-size: 1rem;
+    }
+    .characterImg{
+        width: 63px;
+        padding-top: 98px;
+        background-size: 252px 98px;
+    }
+    @keyframes blink{
+        0%{background-position: 0 0;}
+        4%{background-position: -126px 0;}
+        8%{background-position: 0 0;}
+        100%{background-position: 0 0;}
+    }
+    @keyframes hurt{
+        0%{background-position: -189px 0;
+            filter:contrast(150%);}
+        30%{background-position: -189px 0;
+            filter:contrast(150%);}
+        100%{background-position: 0 0;
+            filter:contrast(100%);}
+    }
+
 }

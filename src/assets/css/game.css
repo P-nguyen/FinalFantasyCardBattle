@@ -1,6 +1,10 @@
+#game{
+    height: 100vh;
+}
+
 #gameBoard{
     /* width: 60%; */
-    height: 100%;
+    height: 90%;
     display: inline-block;
     box-sizing: border-box;
 }
@@ -22,15 +26,17 @@ h1, h2, h3, h5, p{
     color: white;
     font-weight: 700;
     margin: 0;
-    height: 55px;
+    height: 10%;
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 720px) {
     .banner{
         font-size: 25px;
         height: 35px;
     }
+    #gameBoard{
+        height: initial;
+    }
     #gameBoard h1{
         font-size: 1.5rem;
     }
-    
 }

@@ -17,10 +17,9 @@ export default function Player( props ){
             <div className='row text-center no-gutters'>
                 <div className='col-sm-12 col-4'>
                     <div className={props.player.hurt ? 'characterImg hurt':'characterImg blink'} style={imgStyle}></div>
-                    <h5>{props.character}</h5>
                 </div>
                 <div className='col-sm-12 col-4'>
-                    <h1>{props.player.name}</h1>
+                      <h5>{props.character}</h5>
                     <h3>Health:<span>{props.player.health}</span></h3>
                     <h3>Attack:<span>{props.player.attack}</span></h3>
                 </div>
