@@ -34,7 +34,7 @@
 }
 
 .CSel .charHolder{
-    margin-top: 10vh;
+    height: 100vh;
 }
 
 .CSel .pSelect{
@@ -49,4 +49,29 @@
 .CSel .pSelect div{
     font-size: 2em;
     font-weight: 700;
+}
+
+.CSel .hide{
+    display: block;
+}
+
+@media screen and (max-width: 720px) {
+    .CSel .frame{
+        width: 63px;
+        padding-top: 98px;
+    }
+
+    .CSel .selCharacterImg{
+        background-size: 252px 98px;
+    }
+
+    .CSel .charHolder{
+        height: initial;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .CSel .hide{
+        display: none;
+    }
 }

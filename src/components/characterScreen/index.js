@@ -17,11 +17,13 @@ class CharacterSelectionScreen extends Component{
 
     createAvatars(){
         let keys = Object.keys(Characters);
-        let avatars = [];
+        let avatars = [<div className='col-sm-1 hide' key='col1'/>];
     
         keys.map((name,index)=>{
             avatars.push(<Avatar key={index} name={name} playerSInfo={this.state} charInfo={Characters[name]} callback={this.selectChar.bind(this,name)}/>);
         });
+        avatars.splice(6, 0, <div className='col-sm-1 hide ' key='col2'/>);
+        avatars.splice(6, 0, <div className='col-sm-1 hide' key='col3'/>);
         return avatars;
     }
 
@@ -50,18 +52,22 @@ class CharacterSelectionScreen extends Component{
 
         return(
             <div className='CSel container text-center'>
-                <h1>{this.state.turn <= 1 ? 'Character Selection' : 'Begin Fight!'}</h1>
-                <div className='row charHolder'>
-                    {this.createAvatars()}
-                </div>
-                <div className='row'>
+                <div className='charHolder row align-items-center'>
                     <div className='col'>
-                        <h2>Player 1</h2>
-                        <h3>{this.state.p1}</h3>
-                    </div>
-                    <div className='col'>
-                        <h2>Player 2</h2>
-                        <h3>{this.state.p2}</h3>
+                        <h1>{this.state.turn <= 1 ? 'Character Selection' : 'Begin Fight!'}</h1>
+                        <div className='row align-items-center'>
+                            {this.createAvatars()}
+                        </div>
+                        <div className='row'>
+                            <div className='col'>
+                                <h2>Player 1</h2>
+                                <h3>{this.state.p1}</h3>
+                            </div>
+                            <div className='col'>
+                                <h2>Player 2</h2>
+                                <h3>{this.state.p2}</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
