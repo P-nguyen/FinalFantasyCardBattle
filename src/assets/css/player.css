@@ -7,19 +7,19 @@
 }
 
 .characterImg.blink{
-    animation: blink 6s steps(2) infinite;
+    animation: pblink 6s steps(2) infinite;
 }
 .characterImg.hurt{
-    animation: hurt 1.5s steps(3);
+    animation: phurt 1.5s steps(3);
 }
-@keyframes blink{
+@keyframes pblink{
     0%{background-position: 0 0;}
     4%{background-position: -152px 0;}
     8%{background-position: 0 0;}
     100%{background-position: 0 0;}
 }
 
-@keyframes hurt{
+@keyframes phurt{
     0%{background-position: -228px 0;
         filter:contrast(150%);}
     30%{background-position: -228px 0;
@@ -63,13 +63,13 @@
         padding-top: 98px;
         background-size: 252px 98px;
     }
-    @keyframes blink{
+    @keyframes pblink{
         0%{background-position: 0 0;}
         4%{background-position: -126px 0;}
         8%{background-position: 0 0;}
         100%{background-position: 0 0;}
     }
-    @keyframes hurt{
+    @keyframes phurt{
         0%{background-position: -189px 0;
             filter:contrast(150%);}
         30%{background-position: -189px 0;
