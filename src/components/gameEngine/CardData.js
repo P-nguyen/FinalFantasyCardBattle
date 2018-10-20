@@ -30,7 +30,7 @@ export default {
         effect: 1,
         ability: function (currentPlayer, enemyPlayer) {
             if ( enemyPlayer.equip === 'shield'){
-                setTimeout(cardName.shield.sound,500);
+                setTimeout(this.defend, 500);
             }else{
                 enemyPlayer.health -= currentPlayer.attack;
                 enemyPlayer.hurt = true;
@@ -39,7 +39,11 @@ export default {
         },
         sound: function () {
             audioSword.play();
-        }},
+        },
+        defend: function (){
+            audioShield.play();
+        }
+    },
     shield: {name: 'shield',
         address:shield ,
         effect: 0,
