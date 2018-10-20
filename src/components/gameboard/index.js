@@ -53,6 +53,7 @@ class GameBoard extends Component{
     }
 
     render(){
+        console.log('deck',this.props.stateDeck)
         return(
             <div id ='gameBoard' className={ this.props.turnInfo.currentTurn%2 ? 'col-sm-6 text-center gameBoardP2' : 'col-sm-6 text-center gameBoardP1'}>
                 <div className='row no-gutters'>
