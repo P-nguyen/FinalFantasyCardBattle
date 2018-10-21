@@ -24,19 +24,18 @@ when atk or bahamut shows up, should i reset powerups?
 
 *graphics
 *banner
-//issues with sound will figure out in figure.
-sound effects
-add music 
+*sound effects
+*add music 
 
 *add in highlight for character picked???
-mobile ver character select needs to shrink?
-need to recenter character selection screen and maybe condense when full screen.
-playerTurn needs to be blown up. Maybe font by percentage? 
+*mobile ver character select needs to shrink?
+*need to recenter character selection screen and maybe condense when full screen.
+*playerTurn needs to be blown up. Maybe font by percentage? 
 
 
 
 BLUESKY
-add in character selection screen and stats.
+*add in character selection screen and stats.
 when clicked put P1 and hide the image, remove from being able to click again.
 
 
