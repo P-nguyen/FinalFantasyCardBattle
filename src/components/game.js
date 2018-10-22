@@ -9,13 +9,13 @@ function Game(props){
     return (
             <div id ='game' className='row no-gutters text-center'>
                 <h1 className='col-12 banner'>Final Fantasy Card Battle</h1>
-
-                <Player player={props.player1} character={props.p1Char} reverse={true}/>
+                <div className='gameContainer'>
+                    <Player player={props.player1} character={props.p1Char} reverse={true}/>
+                    
+                    <GameBoard turn={props.currentTurn.currentTurn}/>
                 
-                <GameBoard turn={props.currentTurn.currentTurn}/>
-            
-                <Player player={props.player2} character={props.p2Char} />
-
+                    <Player player={props.player2} character={props.p2Char} />
+                </div>
                 <DisplayModal/>
 
             </div>

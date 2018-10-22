@@ -33,10 +33,10 @@ when atk or bahamut shows up, should i reset powerups?
 *playerTurn needs to be blown up. Maybe font by percentage? 
 
 *add in more effects for hurt
-define the player turn better. make the entire player thing highlight? or color change?
+*define the player turn better. make the entire player thing highlight? or color change?
 
 BLUESKY
 *add in character selection screen and stats.
 when clicked put P1 and hide the image, remove from being able to click again.
 
-
+need to make mobile responsive better for horizontal

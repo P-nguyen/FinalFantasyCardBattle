@@ -48,13 +48,23 @@
 .player {
     display: inline-block;
     vertical-align: top;
-    height: 90%;
+    height: 100%;
     color: white;
-    border-radius: 10px;
     border: 3px solid darkgrey;
-    background: linear-gradient(to bottom right, rgba(0,0,170,0.75), rgba(0,0,40,0.75));
 }
 
+.player.p1Back{
+    background: linear-gradient(to left, rgba(0,0,170,0.75), rgba(0,0,40,0.75));
+    border-radius: 10px 0 0 10px;
+    border-right: 0;
+    
+}
+
+.player.p2Back{
+    background: linear-gradient(to right, rgba(225,40,0,0.75), rgba(40,0,0,0.75));
+    border-radius: 0 10px 10px 0;
+    border-left: 0;
+}
 .player img{
     width:60%;
     border-radius: 4px;
@@ -69,30 +79,53 @@
 
 @media screen and (max-width: 720px) {
     .player{
-        height:initial;
+        height:20%;
     }
 
     .player h3, .player h5, .player h3 span{
         font-size: 1rem;
     }
     .characterImg{
-        width: 63px;
-        padding-top: 98px;
+        /* width: 63px;
+        padding-top: 98px; 
         background-size: 252px 98px;
+        */
+        width: 47px;
+        padding-top: 72px;
+        background-size: 188px 72px;
     }
+    
+    .player img{
+        width:45%;
+        margin-top: 5%;
+    }
+
     @keyframes pblink{
         0%{background-position: 0 0;}
-        4%{background-position: -126px 0;}
+        4%{background-position: -94px 0;}
         8%{background-position: 0 0;}
         100%{background-position: 0 0;}
     }
     @keyframes phurt{
-        0%{background-position: -189px 0;
+        0%{background-position: -141px 0;
             filter:contrast(150%);}
-        30%{background-position: -189px 0;
+        30%{background-position: -141px 0;
             filter:contrast(150%);}
         100%{background-position: 0 0;
             filter:contrast(100%);}
     }
 
+    .player.p1Back{
+        background: linear-gradient(to top, rgba(0,0,170,0.75), rgba(40,0,0,0.75));
+        border-radius: 10px 10px 0 0;
+        border: 3px solid darkgray;
+        border-bottom: 0;
+    }
+    .player.p2Back{
+        background: linear-gradient(to bottom, rgba(225,40,0,0.75), rgba(40,0,0,0.75));
+        border-radius: 0 0 10px 10px;
+        border: 3px solid darkgray;
+        border-top: 0;
+
+    }
 }
