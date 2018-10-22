@@ -11,9 +11,8 @@ export default function Player( props ){
     if(props.reverse){
         var reverse = {transform : 'scaleX(-1)'};
     }
-
     return (
-        <div className='player col-sm-3'>
+        <div className={props.reverse ? 'player col-sm-3 p1Back' : 'player col-sm-3 p2Back'}>
             <div className='row text-center no-gutters'>
                 <div className='col-sm-12 col-4' style={reverse}>
                     <div className={props.player.hurt ? 'characterImg hurt':'characterImg blink'} style={imgStyle}></div>
