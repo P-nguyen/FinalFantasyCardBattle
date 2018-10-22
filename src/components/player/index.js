@@ -9,13 +9,13 @@ export default function Player( props ){
         backgroundImage:`url(${characters[props.character].img})`,
     }
     if(props.reverse){
-        imgStyle.transform = 'scaleX(-1)'
+        var reverse = {transform : 'scaleX(-1)'};
     }
 
     return (
         <div className='player col-sm-3'>
             <div className='row text-center no-gutters'>
-                <div className='col-sm-12 col-4'>
+                <div className='col-sm-12 col-4' style={reverse}>
                     <div className={props.player.hurt ? 'characterImg hurt':'characterImg blink'} style={imgStyle}></div>
                 </div>
                 <div className='col-sm-12 col-4'>

@@ -32,7 +32,8 @@ when atk or bahamut shows up, should i reset powerups?
 *need to recenter character selection screen and maybe condense when full screen.
 *playerTurn needs to be blown up. Maybe font by percentage? 
 
-
+*add in more effects for hurt
+define the player turn better. make the entire player thing highlight? or color change?
 
 BLUESKY
 *add in character selection screen and stats.
