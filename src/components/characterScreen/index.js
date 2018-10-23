@@ -51,14 +51,14 @@ class CharacterSelectionScreen extends Component{
         }
 
         return(
-            <div className='CSel container text-center'>
-                <div className='charHolder row align-items-center'>
-                    <div className='col'>
-                        <h1>{this.state.turn <= 1 ? 'Character Selection' : 'Begin Fight!'}</h1>
-                        <div className='row align-items-center'>
+            <div className='container text-center'>
+                <div className='CSel row align-items-center'>
+                    <div className='col selectionScreen'>
+                        <h1 className='selectionTitle'>{this.state.turn <= 1 ? 'Character Selection' : 'Begin Fight!'}</h1>
+                        <div className='row align-items-center charHolder'>
                             {this.createAvatars()}
                         </div>
-                        <div className='row'>
+                        <div className='row playerSelection'>
                             <div className='col'>
                                 <h2>Player 1</h2>
                                 <h3>{this.state.p1}</h3>
