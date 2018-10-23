@@ -38,11 +38,18 @@ h1, h2, h3, h5, p{
     margin: 0;
     height: 10%;
 }
+.banner h1{
+    width: 100%;
+}
 @media screen and (max-width: 720px) {
     .banner{
-        font-size: 6vw;
         height: 10%;
     }
+    
+    .banner h1{
+        font-size: 6vw;
+    }
+
     #gameBoard{
         height: 60%;
     }

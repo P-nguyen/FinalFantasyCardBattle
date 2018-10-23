@@ -40,8 +40,22 @@
     100%{background-position: 0 0;}
 }
 
-.CSel .charHolder{
+.CSel{
     height: 100vh;
+}
+
+.CSel .selectionScreen{
+    height: 80%;
+}
+
+.CSel .selectionTitle{
+    height: 10%;
+}
+.CSel .charHolder{
+    height: 60%;
+}
+.CSel .playerSelection{
+    height: 20%;
 }
 
 .CSel .pSelect{
@@ -63,6 +77,14 @@
 }
 
 @media screen and (max-width: 720px) {
+    .CSel .selectionScreen{
+        height: 90%;
+    }
+    
+    .CSel .selectionTitle{
+        height: 20%;
+    }
+
     .CSel .frame{
         width: 63px;
         padding-top: 98px;
@@ -72,9 +94,6 @@
         background-size: 252px 98px;
     }
 
-    .CSel .charHolder{
-        height: initial;
-    }
     @keyframes cblink{
         0%{background-position: 0 0;}
         4%{background-position: -126px 0;}

@@ -12,3 +12,9 @@
     top: 0;
     right: 0;
 }
+
+@media screen and (max-width: 720px) {
+    .musicWhite, .music{
+        font-size: .7rem;
+    }
+}
