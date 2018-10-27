@@ -1,14 +1,26 @@
 import React from 'react';
-import '../assets/css/app.css';
-import logo from '../assets/images/logo.svg';
+import { connect } from 'react-redux';
+import { startGame, selectChar, setCharacters } from '../actions'
 
-const App = () => (
-    <div>
-        <div className="app">
-            <img src={logo} className="logo rotate"/>
-            <h1>Welcome to React</h1>
-        </div>
+import Game from './game';
+import SplashScreen from './startScreen';
+import CharacterSelectionScreen from './characterScreen';
+import BackgroundMusic from './music';
+
+const App = (props) => (
+    <div onMouseDown={(e)=>{e.preventDefault()}}> 
+        {props.game.startGame ? <SplashScreen start={props.startGame}/> : ''}
+        {props.game.selectChar ? <CharacterSelectionScreen select={props.selectChar} setChar={props.setCharacters}/> : '' }
+        {props.game.dealCards && <Game />}
+        <BackgroundMusic gameStart={props.game.dealCards}/>
     </div>
 );
 
-export default App;
+function mapStateToProps(state){
+    return{
+        game: state.game
+    };
+}
+
+export default connect(mapStateToProps,{ startGame, selectChar, setCharacters})(App);
+

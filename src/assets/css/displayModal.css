@@ -1,0 +1,38 @@
+.display-modal {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden; 
+}
+
+.display-modal.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+.display-modal-content {
+    margin: 10vh 10vw;
+    width: 80%;
+    height: 80%;
+}
+
+.display-modal-content img{
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 5px; 
+}
+
+.display-modal-content h1{
+    color:white;
+    font-size: 9vw;
+}

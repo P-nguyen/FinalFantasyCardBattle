@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700");
+
+.CSel .frame{
+    width: 76px;
+    padding-top: 116px;
+    margin: auto;
+    position: relative;
+}
+.CSel .statsInfo{
+    position: absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,.75);
+    opacity: 0;
+}
+
+.CSel .statsInfo p{
+    font-weight: 700;
+    margin: 1rem 0 0;
+}
+
+.CSel .statsInfo:hover{
+    opacity: 1;
+}
+
+.CSel .selCharacterImg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    background-repeat: no-repeat;
+    animation: cblink 6s steps(2) infinite;
+}
+
+@keyframes cblink{
+    0%{background-position: 0 0;}
+    4%{background-position: -152px 0;}
+    8%{background-position: 0 0;}
+    100%{background-position: 0 0;}
+}
+
+.CSel{
+    height: 100vh;
+}
+
+.CSel .selectionScreen{
+    height: 80%;
+}
+
+.CSel .selectionTitle{
+    height: 10%;
+}
+.CSel .charHolder{
+    height: 60%;
+}
+.CSel .playerSelection{
+    height: 20%;
+}
+
+.CSel .pSelect{
+    position: absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,.75);
+
+}
+
+.CSel .pSelect div{
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.CSel .hide{
+    display: block;
+}
+
+@media screen and (max-width: 720px) {
+    .CSel .selectionScreen{
+        height: 90%;
+    }
+    
+    .CSel .selectionTitle{
+        height: 20%;
+    }
+
+    .CSel .frame{
+        width: 63px;
+        padding-top: 98px;
+    }
+
+    .CSel .selCharacterImg{
+        background-size: 252px 98px;
+    }
+
+    @keyframes cblink{
+        0%{background-position: 0 0;}
+        4%{background-position: -126px 0;}
+        8%{background-position: 0 0;}
+        100%{background-position: 0 0;}
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .CSel .frame{
+        width: 38px;
+        padding-top: 68px;
+    }
+
+    .CSel .selCharacterImg{
+        background-size: 152px 68px;
+    }
+
+    .CSel .hide{
+        display: none;
+    }
+
+    .CSel h2{
+        font-size: 1.5rem;
+    }
+
+    @keyframes cblink{
+        0%{background-position: 0 0;}
+        4%{background-position: -76px 0;}
+        8%{background-position: 0 0;}
+        100%{background-position: 0 0;}
+    }
+}

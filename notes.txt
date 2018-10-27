@@ -1,0 +1,42 @@
+react: will translate whats been done
+
+redux: will hold player currente state
+            health/held card/ attack status
+
+reducers: will be created for every card action avalible
+        reducer is called at the end of each player turn to update player status.
+
+game logic is called when needed
+
+
+todo.
+
+*remove ability to reclick cards and highlight cards
+
+*add in sprite sheet for faces
+*add player highlight for char selection. when highlighted show stats?
+
+*player1 and character name?
+*add in card for playerEQUIP
+
+when atk or bahamut shows up, should i reset powerups?
+*add in player turn box highlight borders?
+
+*graphics
+*banner
+*sound effects
+*add music 
+
+*add in highlight for character picked???
+*mobile ver character select needs to shrink?
+*need to recenter character selection screen and maybe condense when full screen.
+*playerTurn needs to be blown up. Maybe font by percentage? 
+
+*add in more effects for hurt
+*define the player turn better. make the entire player thing highlight? or color change?
+
+BLUESKY
+*add in character selection screen and stats.
+when clicked put P1 and hide the image, remove from being able to click again.
+
+need to make mobile responsive better for horizontal

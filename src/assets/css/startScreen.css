@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC");
+
+.startScreenModal {
+    height: 100vh;
+}
+
+.startScreenModal-content img{
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.startButton{
+    height: 50px;
+    width: 160px;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 3px;
+    font-family: inherit;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2px;
+    margin-bottom: 5%;
+    background-color: white;
+    font-family: 'Playfair Display SC', serif;
+}
+
+.startButton:hover{
+    transform: scale(.9);
+}
+.startScreenModal-content p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .75rem;
+    color: gray;
+}
