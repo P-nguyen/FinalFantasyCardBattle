@@ -8,7 +8,7 @@ class BackgroundMusic extends Component{
     constructor(props){
         super(props);
         this.state = {
-            play: true
+            play: false
         }
     }
 
@@ -24,11 +24,6 @@ class BackgroundMusic extends Component{
             }
         );
 
-    }
-
-    componentDidMount(){
-        painfulBattle.play();
-        painfulBattle.loop = true;
     }
 
     render(){
