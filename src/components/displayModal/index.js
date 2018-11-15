@@ -4,6 +4,7 @@ import { displayTurn, displayWin, unPause, resetPlayers, randomizeDeck } from '.
 
 import '../../assets/css/displayModal.css'
 import cardData from '../gameEngine/cardData';
+import charData from '../gameEngine/playerStats';
 
 function DisplayModal(props){
 
@@ -21,7 +22,7 @@ function DisplayModal(props){
                 <div className="display-modal-content row align-items-center">
                     {props.turnInfo.displayCard && <BasicReveal name={props.turnInfo.lastCardSeen} callback={winText? props.displayWin : props.displayTurn}/>}
                     {props.turnInfo.displayWin && <WinModal text={winText} callback={props.displayTurn} resetPlayers={props.resetPlayers} resetDeck={props.randomizeDeck.bind(this, props.deck)}/>}
-                    {props.turnInfo.displayPlayerTurn && <PlayerTurn turn={props.turnInfo} callback={props.unPause}/>}
+                    {props.turnInfo.displayPlayerTurn && <PlayerTurn turn={props.turnInfo} player1Char={props.player1Char} player2Char={props.player2Char} callback={props.unPause}/>}
                 </div>
             </div>  
         );
@@ -63,12 +64,13 @@ class WinModal extends Component{
 
 class PlayerTurn extends Component{
     componentDidMount(){
-        setTimeout(this.props.callback, 1000);
+        setTimeout(this.props.callback, 1500);
     }
 
     render(){
         return(<div className="col-12 text-center">
-            <h1>{this.props.turn.currentTurn%2 ? 'Player 2 Turn' : 'Player 1 turn'}</h1>
+            <img src={this.props.turn.currentTurn%2 ? charData[this.props.player2Char].img : charData[this.props.player1Char].img} className="displayCharImg blink mx-auto d-block"/>
+            <h1>{this.props.turn.currentTurn%2 ? this.props.player2Char + "'s turn" : this.props.player1Char + "'s turn"}</h1>
         </div>)
     }
 }
@@ -79,7 +81,9 @@ function mapStateToProps(state){
         deck:state.cardDeck.deck,
         turnInfo: state.currentTurn,
         player1Health: state.players.player1.health,
-        player2Health: state.players.player2.health
+        player2Health: state.players.player2.health,
+        player1Char:state.players.p1Character,
+        player2Char:state.players.p2Character
 
     }
 }
