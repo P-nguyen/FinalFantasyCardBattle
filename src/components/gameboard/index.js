@@ -58,7 +58,7 @@ class GameBoard extends Component{
                 <div className='row no-gutters'>
                     {this.addCardToField()}
                 </div>
-                <h1>{ this.props.turn%2 ? 'Player 2 Turn' : 'Player 1 Turn'}</h1>
+                <h1>{ this.props.turn%2 ? this.props.player2Char + "'s turn" : this.props.player1Char + "'s turn"}</h1>
             </div>
         );
     };
@@ -68,7 +68,9 @@ class GameBoard extends Component{
 function mapStateToProps(state){
     return {
         stateDeck: state.cardDeck.deck,
-        turnInfo: state.currentTurn
+        turnInfo: state.currentTurn,
+        player1Char:state.players.p1Character,
+        player2Char:state.players.p2Character
 
     }
 }

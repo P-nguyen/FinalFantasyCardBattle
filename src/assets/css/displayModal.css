@@ -36,3 +36,13 @@
     color:white;
     font-size: 9vw;
 }
+
+.display-modal-content .displayCharImg{
+    width: 95px;
+    height: 145px;
+    margin: 10px auto;
+    border: 4px groove rgb(246,201,153);
+    box-sizing: content-box;
+    object-fit: cover;
+    object-position: left;
+}
