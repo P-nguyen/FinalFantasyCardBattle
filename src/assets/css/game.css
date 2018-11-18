@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+.cardBoard{
+    height:100%;
+}
+
 .gameContainer{
     height: 90%;
 }
@@ -41,7 +45,7 @@ h1, h2, h3, h5, p{
 .banner h1{
     width: 100%;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
     .banner{
         height: 10%;
     }
