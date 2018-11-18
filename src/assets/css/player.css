@@ -77,7 +77,11 @@
     font-weight: 700;
 }
 
-@media screen and (max-width: 720px) {
+.player h3, .player h5{
+    margin: 10% 0;
+}
+
+@media screen and (max-width: 768px) {
     .player{
         height:20%;
     }
@@ -86,17 +90,15 @@
         font-size: 1rem;
     }
     .characterImg{
-        /* width: 63px;
-        padding-top: 98px; 
-        background-size: 252px 98px;
-        */
         width: 47px;
         padding-top: 72px;
         background-size: 188px 72px;
     }
     
     .player img{
-        width:45%;
+        max-height: 85px;
+        width: 45%;
+        max-width: 45px;
         margin-top: 5%;
     }
 

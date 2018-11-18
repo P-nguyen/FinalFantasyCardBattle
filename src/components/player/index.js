@@ -63,17 +63,17 @@ class Player extends Component {
         }
 
         return (
-            <div className={this.props.reverse ? 'player col-sm-3 p1Back' : 'player col-sm-3 p2Back'}>
+            <div className={this.props.reverse ? 'player col-md-3 p1Back' : 'player col-md-3 p2Back'}>
                 <div className='row text-center no-gutters'>
-                    <div className='col-sm-12 col-4' style={reverse}>
+                    <div className='col-md-12 col-4' style={reverse}>
                         <div className={this.props.player.hurt ? 'characterImg hurt':'characterImg blink'} style={imgStyle}></div>
                     </div>
-                    <div className='col-sm-12 col-4'>
+                    <div className='col-md-12 col-4'>
                         <h5>{this.props.character}</h5>
                         <h3 className={this.checkHealthChange()}>Health:<span>{this.props.player.health}</span></h3>
                         <h3>Attack:<span>{this.props.player.attack}</span></h3>
                     </div>
-                    <div className='col-sm-12 col-4'>
+                    <div className='col-md-12 col-4'>
                         {this.props.player.equip ?  <img src={cardData[this.props.player.equip].address}/> : <img src={cardBack}/>}
                         <h5>Equip</h5>
                     </div>
