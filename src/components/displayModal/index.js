@@ -68,8 +68,10 @@ class PlayerTurn extends Component{
     }
 
     render(){
+        var imgStyle = this.props.turn.currentTurn%2 ?  {} : {transform : 'scaleX(-1)'};
+  
         return(<div className="col-12 text-center">
-            <img src={this.props.turn.currentTurn%2 ? charData[this.props.player2Char].img : charData[this.props.player1Char].img} className="displayCharImg blink mx-auto d-block"/>
+            <img src={this.props.turn.currentTurn%2 ? charData[this.props.player2Char].img : charData[this.props.player1Char].img} className="displayCharImg blink mx-auto d-block" style={imgStyle}/>
             <h1>{this.props.turn.currentTurn%2 ? this.props.player2Char + "'s turn" : this.props.player1Char + "'s turn"}</h1>
         </div>)
     }
