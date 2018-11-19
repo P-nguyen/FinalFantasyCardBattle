@@ -26,6 +26,7 @@
 
 .startButton:hover{
     transform: scale(.9);
+    cursor: pointer;
 }
 .startScreenModal-content p{
     font-family: Arial, Helvetica, sans-serif;

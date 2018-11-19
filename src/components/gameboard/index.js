@@ -54,11 +54,15 @@ class GameBoard extends Component{
 
     render(){
         return(
-            <div id ='gameBoard' className={ this.props.turnInfo.currentTurn%2 ? 'col-sm-6 text-center gameBoardP2' : 'col-sm-6 text-center gameBoardP1'}>
-                <div className='row no-gutters'>
-                    {this.addCardToField()}
+            <div id ='gameBoard' className={ this.props.turnInfo.currentTurn%2 ? 'col-md-6 text-center gameBoardP2' : 'col-md-6 text-center gameBoardP1'}>
+                <div className='cardBoard row no-gutters align-items-center'>
+                    <div className='col'>
+                        <div className='row'>
+                            {this.addCardToField()}
+                        </div>
+                    </div>
+                    <h1 className='col-12'>{ this.props.turn%2 ? this.props.player2Char + "'s turn" : this.props.player1Char + "'s turn"}</h1>
                 </div>
-                <h1>{ this.props.turn%2 ? 'Player 2 Turn' : 'Player 1 Turn'}</h1>
             </div>
         );
     };
@@ -68,7 +72,9 @@ class GameBoard extends Component{
 function mapStateToProps(state){
     return {
         stateDeck: state.cardDeck.deck,
-        turnInfo: state.currentTurn
+        turnInfo: state.currentTurn,
+        player1Char:state.players.p1Character,
+        player2Char:state.players.p2Character
 
     }
 }

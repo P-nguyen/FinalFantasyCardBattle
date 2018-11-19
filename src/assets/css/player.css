@@ -77,7 +77,11 @@
     font-weight: 700;
 }
 
-@media screen and (max-width: 720px) {
+.player h3, .player h5{
+    margin: 10% 0;
+}
+
+@media screen and (max-width: 768px) {
     .player{
         height:20%;
     }
@@ -86,17 +90,15 @@
         font-size: 1rem;
     }
     .characterImg{
-        /* width: 63px;
-        padding-top: 98px; 
-        background-size: 252px 98px;
-        */
         width: 47px;
         padding-top: 72px;
         background-size: 188px 72px;
     }
     
     .player img{
-        width:45%;
+        max-height: 85px;
+        width: 45%;
+        max-width: 45px;
         margin-top: 5%;
     }
 
@@ -127,5 +129,32 @@
         border: 3px solid darkgray;
         border-top: 0;
 
+    }
+}
+
+.pulsateRed {
+    color: darkred;
+    animation: pulsate 3s ease-out;
+    animation-iteration-count: infinite;
+}
+
+.pulsateGreen {
+    color: green;
+    animation: pulsate 3s ease-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulsate {
+    0% { 
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 1.0;
+        transform: scale(1.25);
+    }
+    100% { 
+        opacity: 0.5;
+        transform: scale(1);
     }
 }
