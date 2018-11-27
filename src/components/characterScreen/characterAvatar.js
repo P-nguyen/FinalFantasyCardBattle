@@ -6,7 +6,7 @@ const Avatar = (props) => {
     const select = props.playerSInfo.p1 === props.name || props.playerSInfo.p2 === props.name;
     return (
     <div className='col col-sm-2'>
-        <div className='frame' onClick={props.callback}>
+        <div className='frame' onClick={select ? ()=>{} : props.callback}>
             <div className='selCharacterImg' style={{backgroundImage:`url(${props.charInfo.img})`}}/>
             <div className='statsInfo'><p>H: {props.charInfo.health}</p><p>Atk: {props.charInfo.attack}</p></div>
             {select ? <div className='pSelect'>
@@ -20,7 +20,6 @@ const Avatar = (props) => {
     </div>
     );
 }
-
 
 
 export default Avatar;
